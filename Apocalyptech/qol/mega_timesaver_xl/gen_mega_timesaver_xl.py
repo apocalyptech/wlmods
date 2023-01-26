@@ -346,31 +346,27 @@ if False:
     mod.bytecode_hotfix(Mod.PATCH, '',
             '/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects',
             'ExecuteUbergraph_Action_TeleportEffects',
-            391,
+            1151,
             default_teleport,
             max(min_timers, round(new_duration*teleport_scale, 6)),
             )
 
     mod.newline()
 
-# TODO: test/adapt this
-if False:
-    # Photo Mode activation time
-    # I actually *don't* want to alter deactivation time, since Photo Mode can be used
-    # to pick up gear or hit buttons that you wouldn't otherwise be able to reach,
-    # while the camera's zooming back to your char.  That's even occasionally important
-    # with this mod active, such as getting to the Typhon Dead Drop in Meridian
-    # Outskirts without having to go all the way around the level.
-    mod.header('Photo Mode Activation Time')
-    mod.bytecode_hotfix(Mod.PATCH, '',
-            '/Game/GameData/BP_PhotoModeController',
-            'ExecuteUbergraph_BP_PhotoModeController',
-            # 187 is the deactivation index (also default of 1.5)
-            122,
-            1.5,
-            1.5/global_scale,
-            )
-    mod.newline()
+# Photo Mode activation time
+# I actually *don't* want to alter deactivation time, since Photo Mode can be used
+# to pick up gear or hit buttons that you wouldn't otherwise be able to reach,
+# while the camera's zooming back to your char.
+mod.header('Photo Mode Activation Time')
+mod.bytecode_hotfix(Mod.PATCH, '',
+        '/Game/GameData/BP_PhotoModeController',
+        'ExecuteUbergraph_BP_PhotoModeController',
+        # 187 is the deactivation index (also default of 1.5)
+        122,
+        1.5,
+        1.5/global_scale,
+        )
+mod.newline()
 
 class AS():
     """

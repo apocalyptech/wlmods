@@ -30,6 +30,8 @@ Changelog
 **v1.0.0** - *(unreleased)*
  * Merged in a lot of internal infrastructure from the now-"finished" BL3 version
  * Reduced our "standard" speed improvement from 5x to 4x (except for doors)
+ * New Additions:
+   * Photo Mode activation time
 
 **v0.9.0** - Jul 28, 2022
  * Initial beta release.  Incomplete, but should be handy regardless!

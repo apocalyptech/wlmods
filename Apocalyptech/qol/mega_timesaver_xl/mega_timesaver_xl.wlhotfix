@@ -41,6 +41,12 @@ SparkPatchEntry,(1,1,0,),/Game/Pickups/_Shared/_Design/DroppedPickupFlyToSetting
 SparkPatchEntry,(1,1,0,),/Game/Pickups/_Shared/_Design/DroppedPickupFlyToSettings.DroppedPickupFlyToSettings,LinearAcceleration,0,,1000.0
 
 ###
+### Photo Mode Activation Time
+###
+
+SparkPatchEntry,(1,7,0,),/Game/GameData/BP_PhotoModeController.BP_PhotoModeController_C,0,1,ExecuteUbergraph_BP_PhotoModeController,1,122,3:1.5,5:0.375
+
+###
 ### Simple Animation Speedups
 ###
 
