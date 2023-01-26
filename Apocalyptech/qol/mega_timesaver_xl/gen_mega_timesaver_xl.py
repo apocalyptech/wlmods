@@ -854,14 +854,14 @@ for char in sorted([
     # used to control NPC speeds just take the walk speed and scale it where appropriate.
     # I think that MaxWalkSpeed itself might even be scaled down a bit for the usual NPC
     # "Walk" stance.
-    mod.reg_hotfix(Mod.CHAR, char.last_bit,
-            char.full_path,
-            'OakCharacterMovement.Object..MaxSprintSpeed',
-            '(Value={},BaseValue={})'.format(
-                round(speed_sprint*char.sprint_scale, 6),
-                round(speed_sprint*char.sprint_scale, 6),
-                ),
-            )
+    #mod.reg_hotfix(Mod.CHAR, char.last_bit,
+    #        char.full_path,
+    #        'OakCharacterMovement.Object..MaxSprintSpeed',
+    #        '(Value={},BaseValue={})'.format(
+    #            round(speed_sprint*char.sprint_scale, 6),
+    #            round(speed_sprint*char.sprint_scale, 6),
+    #            ),
+    #        )
     if have_slowdown:
         mod.reg_hotfix(Mod.CHAR, char.last_bit,
                 char.full_path,
