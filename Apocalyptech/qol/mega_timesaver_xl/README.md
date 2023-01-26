@@ -27,6 +27,9 @@ TODO
 Changelog
 =========
 
+**v1.0.0** - *(unreleased)*
+ * Merged in a lot of internal infrastructure from the now-"finished" BL3 version
+
 **v0.9.0** - Jul 28, 2022
  * Initial beta release.  Incomplete, but should be handy regardless!
    Based on v0.9.1 of [BL3's Mega TimeSaver XL](https://github.com/BLCM/bl3mods/wiki/Mega%20TimeSaver%20XL)
