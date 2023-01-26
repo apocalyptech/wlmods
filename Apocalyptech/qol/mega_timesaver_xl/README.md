@@ -32,6 +32,7 @@ Changelog
  * Reduced our "standard" speed improvement from 5x to 4x (except for doors)
  * New Additions:
    * Photo Mode activation time
+   * Fast-travel/teleport/resurrect skips
 
 **v0.9.0** - Jul 28, 2022
  * Initial beta release.  Incomplete, but should be handy regardless!

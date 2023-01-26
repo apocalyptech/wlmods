@@ -41,6 +41,14 @@ SparkPatchEntry,(1,1,0,),/Game/Pickups/_Shared/_Design/DroppedPickupFlyToSetting
 SparkPatchEntry,(1,1,0,),/Game/Pickups/_Shared/_Design/DroppedPickupFlyToSettings.DroppedPickupFlyToSettings,LinearAcceleration,0,,1000.0
 
 ###
+### Fast Travel / Teleport Animation Disable
+###
+
+SparkPatchEntry,(1,1,0,),/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects.Default__Action_TeleportEffects_C,Duration,0,,0.5
+SparkPatchEntry,(1,7,0,),/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects.Action_TeleportEffects_C,0,1,ExecuteUbergraph_Action_TeleportEffects,1,1348,3:5.5,4:0.55
+SparkPatchEntry,(1,7,0,),/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects.Action_TeleportEffects_C,0,1,ExecuteUbergraph_Action_TeleportEffects,1,1151,3:1.5,3:0.4
+
+###
 ### Photo Mode Activation Time
 ###
 
@@ -429,6 +437,22 @@ SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/Industrial/Strong_Box/Anim
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/Industrial/Strong_Box/Animation/AS_Open.AS_Open,Notifies.Notifies[2].SegmentLength,0,,0.275
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/Industrial/Strong_Box/Animation/AS_Open.AS_Open,Notifies.Notifies[2].LinkValue,0,,0.147048
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/Industrial/Strong_Box/Animation/AS_Open.AS_Open,SequenceLength,0,,1.1
+
+# Character Death Respawns
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,RateScale,0,,4
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[0].SegmentLength,0,,2.3
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[0].LinkValue,0,,0.914167
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[1].SegmentLength,0,,2.3
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[1].LinkValue,0,,0.915167
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[2].SegmentLength,0,,2.3
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[2].LinkValue,0,,1.356096
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[2].EndLink.SegmentLength,0,,2.3
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[2].EndLink.LinkValue,0,,1.907728
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[3].SegmentLength,0,,2.3
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[3].LinkValue,0,,1.671394
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[4].SegmentLength,0,,2.3
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,Notifies.Notifies[4].LinkValue,0,,1.941337
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel.AS_Respawn_Kneel,SequenceLength,0,,2.3
 
 ###
 ### InteractiveObject Speedups: Doors

@@ -303,55 +303,47 @@ for obj_name in [
             obj_data['LinearAcceleration']*2)
 mod.newline()
 
-# TODO: Test/adapt this as needed
-if False:
-    # Make Fast Travel + Teleport digistruct animations disappear
-    # (note that the death respawn is totally separate from this, and handled via
-    # some AnimSequence tweaks above)
-    mod.header('Fast Travel / Teleport Animation Disable')
+# Make Fast Travel + Teleport digistruct animations disappear
+# Note that the death respawn is totally separate from this, and handled via
+# some AnimSequence tweaks down below.  Also, rather than all the weird shenanigans
+# from the BL3 version (a remnant from when I was gonna package this bit up as its
+# own mod with various options), I'm just hardcoding the various values here.  The
+# timings in WL are a bit different and the old BL3 stuff didn't quite translate
+# nicely anyway.
+mod.header('Fast Travel / Teleport Animation Disable')
 
-    # A bunch of silliness in here, when I was looking at bundling this separately
-    # as its own mod and was considering multiple versions.  In the end, this just
-    # hardcodes an effective disabling of the whole sequence, and I could omit
-    # various bits of math.  But whatever, the work is done -- leaving it as-is.
-    default_duration = 5
-    default_unlock = 5.5
-    default_teleport = 1.5
-    unlock_scale = default_unlock/default_duration
-    teleport_scale = default_teleport/default_duration
+mod.reg_hotfix(Mod.PATCH, '',
+        '/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects.Default__Action_TeleportEffects_C',
+        'Duration',
+        # Default is 5
+        0.5,
+        )
 
-    # 0.5 - Effectively disables it
-    # 2 - Quite short, but still gets a tiny bit of the tunnel
-    new_duration = 0.5
+# Adjust delay on unlocking resources (whatever that means; haven't figured out
+# what's not available when "locked").  It's a bit strange in this case because
+# the timing on this would put it *after* everything's already done?  I wonder
+# if whatever this does never gets called, 'cause I know if the teleport delay
+# down below isn't within the previous Duration, the teleport doesn't actually
+# happen.  I suppose it must, though, because it looks like what gets unlocked
+# here is, like, fast travel state, and HUD, etc.
+mod.bytecode_hotfix(Mod.PATCH, '',
+        '/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects',
+        'ExecuteUbergraph_Action_TeleportEffects',
+        1348,
+        5.5,
+        0.55,
+        )
 
-    min_timers = min(default_teleport, new_duration)
+# Adjust delay on actually teleporting
+mod.bytecode_hotfix(Mod.PATCH, '',
+        '/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects',
+        'ExecuteUbergraph_Action_TeleportEffects',
+        1151,
+        1.5,
+        0.4,
+        )
 
-    mod.reg_hotfix(Mod.PATCH, '',
-            '/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects.Default__Action_TeleportEffects_C',
-            'Duration',
-            new_duration,
-            )
-
-    # Adjust delay on unlocking resources (whatever that means; haven't figured out
-    # what's not available when "locked")
-    mod.bytecode_hotfix(Mod.PATCH, '',
-            '/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects',
-            'ExecuteUbergraph_Action_TeleportEffects',
-            1348,
-            default_unlock,
-            max(min_timers, round(new_duration*unlock_scale, 6)),
-            )
-
-    # Adjust delay on actually teleporting
-    mod.bytecode_hotfix(Mod.PATCH, '',
-            '/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects',
-            'ExecuteUbergraph_Action_TeleportEffects',
-            1151,
-            default_teleport,
-            max(min_timers, round(new_duration*teleport_scale, 6)),
-            )
-
-    mod.newline()
+mod.newline()
 
 # Photo Mode activation time
 # I actually *don't* want to alter deactivation time, since Photo Mode can be used
@@ -490,6 +482,10 @@ for cat_name, cat_scale, cat_seqlen_scale, animseqs in [
             AS('/Game/Lootables/Industrial/Lock_Box/Animations/AS_Open'),
             AS('/Game/Lootables/Industrial/Safe/Animation/AS_Open'),
             AS('/Game/Lootables/Industrial/Strong_Box/Animation/AS_Open'),
+            ]),
+        ('Character Death Respawns', global_scale, global_scale, [
+            # This is actually the *entire* sequence, including the respawn tunnel and such
+            AS('/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel'),
             ]),
         ]:
 
