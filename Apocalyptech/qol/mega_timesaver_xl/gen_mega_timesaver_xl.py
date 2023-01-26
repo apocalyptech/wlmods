@@ -131,7 +131,7 @@ mod = Mod('mega_timesaver_xl.wlhotfix',
 ###
 
 # How much to improve speed
-global_scale = 5
+global_scale = 4
 
 # ... but I want to do doors a *bit* more
 door_scale = 5
