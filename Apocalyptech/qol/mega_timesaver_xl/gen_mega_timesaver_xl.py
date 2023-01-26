@@ -600,7 +600,7 @@ for category, cat_scale, io_objs in [
             # find $(find . -name Switches) -name "IO_*.uasset" | sort -i | cut -d. -f2
             IO('/Game/InteractiveObjects/Switches/_Design/Classes/Global/IO_Daffodil_LichDoorbell'),
             IO('/Game/InteractiveObjects/Switches/_Design/Classes/Global/IO_Switch_Daffodil_SkullSwitch'),
-            # Can't be serialized
+            # No timing parameters
             #IO('/Game/InteractiveObjects/Switches/_Design/Classes/Global/IO_Switch_SimpleButton'),
             IO('/Game/InteractiveObjects/Switches/Hub_Switch/IO_Switch_Hub'),
             IO('/Game/InteractiveObjects/Switches/Lever/Design/IO_Switch_Industrial_FloorLever_V1_Damageable'),
