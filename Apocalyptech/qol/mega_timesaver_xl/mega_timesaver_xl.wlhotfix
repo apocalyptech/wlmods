@@ -826,6 +826,18 @@ SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/Switches/Lever/De
 ###
 
 ###
+### Mission/Level Specific: Starting gun platform-rise speed, in Snoring Valley
+###
+
+SparkLevelPatchEntry,(1,1,0,Tutorial_P),/Game/Maps/Zone_1/Tutorial/Tutorial_M_Plot0Tutorial.Tutorial_M_Plot0Tutorial:PersistentLevel.SEQ_FatemakerShrine.AnimationPlayer,PlaybackSettings.PlayRate,0,,4
+
+###
+### Intro gate timing speedup
+###
+
+SparkLevelPatchEntry,(1,1,0,Tutorial_P),/Game/Maps/Zone_1/Tutorial/Tutorial_M_Plot0Tutorial.Tutorial_M_Plot0Tutorial:PersistentLevel.IO_Door_550x550_IntroGate_2.BarricadeMovementTimeline,TheTimeline.Length,0,,0.3125
+
+###
 ### NPC Walking Speeds
 ###
 

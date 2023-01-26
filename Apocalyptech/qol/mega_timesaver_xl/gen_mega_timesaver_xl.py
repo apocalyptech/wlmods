@@ -314,7 +314,7 @@ if False:
     # as its own mod and was considering multiple versions.  In the end, this just
     # hardcodes an effective disabling of the whole sequence, and I could omit
     # various bits of math.  But whatever, the work is done -- leaving it as-is.
-    default_duration = 6.5
+    default_duration = 5
     default_unlock = 5.5
     default_teleport = 1.5
     unlock_scale = default_unlock/default_duration
@@ -337,7 +337,7 @@ if False:
     mod.bytecode_hotfix(Mod.PATCH, '',
             '/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects',
             'ExecuteUbergraph_Action_TeleportEffects',
-            1119,
+            1348,
             default_unlock,
             max(min_timers, round(new_duration*unlock_scale, 6)),
             )
@@ -567,6 +567,7 @@ for category, cat_scale, io_objs in [
             IO('/Game/InteractiveObjects/Doors/Default/400x400/IO_Door_400x400_SlideLeftAndRight'),
             IO('/Game/InteractiveObjects/Doors/_Design/Classes/Global/IO_Daffodil_DamageableVines'),
             IO('/Game/InteractiveObjects/Doors/_Design/Classes/Global/IO_Door_130x250_HubPlayerDoor'),
+            # See also some tweaks below
             IO('/Game/InteractiveObjects/Doors/_Design/Classes/Global/IO_Door_550x550_IntroGate'),
             IO('/Game/InteractiveObjects/Doors/_Design/Classes/Global/IO_Door_550x550_NormalGate'),
             IO('/Game/InteractiveObjects/Doors/_Design/Classes/Global/IO_Door_600x400_SlideUp_Sands'),
@@ -769,6 +770,25 @@ for label, level, obj_name, speed, travel_time in sorted([
             travel_time/global_scale,
             )
     mod.newline()
+
+# Slapping in the getall here 'cause I always have to reconstruct the buggers every time:
+# getall gbxlevelsequenceplayer PlaybackSettings name=AnimationPlayer outer=SEQ_FatemakerShrine
+mod.header('Mission/Level Specific: Starting gun platform-rise speed, in Snoring Valley')
+mod.reg_hotfix(Mod.LEVEL, 'Tutorial_P',
+        '/Game/Maps/Zone_1/Tutorial/Tutorial_M_Plot0Tutorial.Tutorial_M_Plot0Tutorial:PersistentLevel.SEQ_FatemakerShrine.AnimationPlayer',
+        'PlaybackSettings.PlayRate',
+        global_scale,
+        )
+mod.newline()
+
+# Intro gate after reviving townsperson
+mod.header('Intro gate timing speedup')
+mod.reg_hotfix(Mod.LEVEL, 'Tutorial_P',
+        '/Game/Maps/Zone_1/Tutorial/Tutorial_M_Plot0Tutorial.Tutorial_M_Plot0Tutorial:PersistentLevel.IO_Door_550x550_IntroGate_2.BarricadeMovementTimeline',
+        'TheTimeline.Length',
+        1.25/global_scale,
+        )
+mod.newline()
 
 mod.header('NPC Walking Speeds')
 
