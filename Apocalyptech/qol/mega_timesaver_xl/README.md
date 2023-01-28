@@ -18,6 +18,9 @@ Currently, the mod attempts to affect the following:
 * Doors
 * Possibly some Switches
 
+Things not covered by the mod:
+* The initial spawning of Overworld random encounter enemies
+
 TODO
 ====
 
@@ -33,6 +36,7 @@ Changelog
  * New Additions:
    * Photo Mode activation time
    * Fast-travel/teleport/resurrect skips
+   * Random Encounter + Dungeon speedups
 
 **v0.9.0** - Jul 28, 2022
  * Initial beta release.  Incomplete, but should be handy regardless!

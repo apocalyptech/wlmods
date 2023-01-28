@@ -49,6 +49,19 @@ SparkPatchEntry,(1,7,0,),/Game/PlayerCharacters/_Shared/_Design/Travel/Action_Te
 SparkPatchEntry,(1,7,0,),/Game/PlayerCharacters/_Shared/_Design/Travel/Action_TeleportEffects.Action_TeleportEffects_C,0,1,ExecuteUbergraph_Action_TeleportEffects,1,1151,3:1.5,3:0.4
 
 ###
+### Dungeon and Random Overworld encounter tweaks
+###
+
+# Encounter-start delay (after you're already locked in)
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Overworld/A_Transition_RE_FadeOut.Default__A_Transition_RE_FadeOut_C,Duration,0,,0.875
+
+# Initial movement-lock delay when spawning in
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/GameData/Dungeon/Classes/BP_CombatEncounter.Default__BP_CombatEncounter_C,MiseEnSceneDelay,0,,0.675
+
+# Exit-portal delay
+SparkLevelPatchEntry,(1,7,0,MatchAll),/Game/InteractiveObjects/Portals/IO_EncounterExitPortal.IO_EncounterExitPortal_C,0,1,ExecuteUbergraph_IO_EncounterExitPortal,1,1294,4:0.75,6:0.1875
+
+###
 ### Photo Mode Activation Time
 ###
 

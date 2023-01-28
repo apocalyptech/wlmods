@@ -345,6 +345,84 @@ mod.bytecode_hotfix(Mod.PATCH, '',
 
 mod.newline()
 
+# Random encounter tweaks.  I'm using `MatchAll` for these rather than `Overworld_P`
+# because I suspect the same vars end up applying to the Chaos Chamber as well, and
+# maybe even DLC encounters?  Anyway, don't want to double up on hotfixes, so MatchAll
+# it is.
+#
+# There's a number of specific parts to this whole sequence (a few don't apply to
+# Overworld Dungeons, but whatever):
+#
+#  1) The initial enemy spawning-in.  I actually *don't* want to speed this up at all,
+#     because the player may very well want to try and avoid the encounter.  Speeding
+#     this part up might work against that goal.  So, that'll remain as-is.
+#
+#  2) The sequence where you're "locked-in" to the encounter, up to when the teleport
+#     tunnel starts.  I've got that sped up a bit.
+#
+#  3) The teleport-tunnel while the game's loading the encounter.  I haven't found any
+#     way to speed this up, and I expect that this is just hiding the loading progress
+#     anyway, so I think there probably *isn't* a way to speed it up, at least via
+#     modding.
+#
+#  4) The player being locked in-place for a few seconds when the encounter starts.
+#     This has been sped up (which basically skips the entire lock time)
+#
+#  5) At encounter end, there's a slight delay before the portal activates, after you
+#     hit it.  That's sped-up below as well.
+#
+#  6) The teleport-tunnel back to the Overworld.  It feels like this is something that
+#     should be able to be sped up -- I'm not sure what kind of loading it would be
+#     covering up, since AFAIK the Overworld remains loaded-in for the whole time -- but
+#     I haven't been able to find anything which seems to relate to this delay.
+#     I *suspect* that the timings-n-such for that encounter-exit are stored in
+#     an `ExitEncounter` function, which I think is probably in-engine.  That
+#     call can be found in /Game/GameData/Dungeon/Classes/BP_CombatEncounter's
+#     "UsePortal" byteceode, which is called from /Game/InteractiveObjects/Portals/IO_EncounterExitPortal's
+#     "OnUsePortalResult" chain (which, as is typical, redirects immediately
+#     into the main "ExecuteUbergraph_IO_EncounterExitPortal").  A `grep -ri
+#     exitencounter *` over all the game data yields nothing but the
+#     BP_CombatEncounter reference, plus a sort-of copy at
+#     /Game/PatchDLC/Indigo1/Common/Blueprints/EncounterClassData/BP_IndigoEncounter,
+#     so I'm not optimistic we can alter any timing (if there's even timing to
+#     be altered -- perhaps there really is some loading going on in the background).
+#
+#  7) The final warping animations once you're back in the Overworld.  I didn't even
+#     look for these, since you've got full control of your char from the instant you
+#     arrive back on the Overworld, so the timing there doesn't matter at all.
+#
+mod.header('Dungeon and Random Overworld encounter tweaks')
+
+mod.comment("Encounter-start delay (after you're already locked in)")
+mod.reg_hotfix(Mod.LEVEL, 'MatchAll',
+        f'/Game/Overworld/A_Transition_RE_FadeOut.Default__A_Transition_RE_FadeOut_C',
+        'Duration',
+        3.5/global_scale,
+        )
+mod.newline()
+
+# This actually results in seeming to be unlocked instantly; I'm guessing the timer
+# starts before the map fully loads in.
+mod.comment('Initial movement-lock delay when spawning in')
+mod.reg_hotfix(Mod.LEVEL, 'MatchAll',
+        '/Game/GameData/Dungeon/Classes/BP_CombatEncounter.Default__BP_CombatEncounter_C',
+        'MiseEnSceneDelay',
+        2.7/global_scale,
+        )
+mod.newline()
+
+# The difference here is obvs. pretty slight, since the default is already under
+# a second.  Still, it gets you to the teleport portal even quicker.
+mod.comment('Exit-portal delay')
+mod.bytecode_hotfix(Mod.LEVEL, 'MatchAll',
+        '/Game/InteractiveObjects/Portals/IO_EncounterExitPortal',
+        'ExecuteUbergraph_IO_EncounterExitPortal',
+        1294,
+        0.75,
+        0.75/global_scale,
+        )
+mod.newline()
+
 # Photo Mode activation time
 # I actually *don't* want to alter deactivation time, since Photo Mode can be used
 # to pick up gear or hit buttons that you wouldn't otherwise be able to reach,
