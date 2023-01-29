@@ -14,9 +14,7 @@ finish it properly
 
 Currently, the mod attempts to affect the following:
 
-* Lootable Containers
-* Doors
-* Possibly some Switches
+* Lootable Containers, Doors, Wheel of Fate...
 
 Things not covered by the mod:
 * The initial spawning of Overworld random encounter enemies
@@ -37,6 +35,7 @@ Changelog
    * Photo Mode activation time
    * Fast-travel/teleport/resurrect skips
    * Random Encounter + Dungeon speedups
+   * Wheel of Fate
 
 **v0.9.0** - Jul 28, 2022
  * Initial beta release.  Incomplete, but should be handy regardless!

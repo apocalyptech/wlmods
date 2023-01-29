@@ -565,6 +565,14 @@ for cat_name, cat_scale, cat_seqlen_scale, animseqs in [
             # This is actually the *entire* sequence, including the respawn tunnel and such
             AS('/Game/PlayerCharacters/_Shared/Animation/3rd/Generic/FFYL/AS_Respawn_Kneel'),
             ]),
+        ('Other Objects', global_scale, 1, [
+            # I suspect that some of these probably aren't required to fully speed up the wheel,
+            # but it doesn't seem to hurt, so whatever.
+            AS('/Game/PatchDLC/Indigo1/Common/Animation/WheelOfFate/AS_WheelOfFate_Mandibles_OpenClose', target='Ind_CaravanHub_01_P'),
+            AS('/Game/PatchDLC/Indigo1/Common/Animation/WheelOfFate/AS_WheelOfFate_Mandibles_OpenClose_Short', target='Ind_CaravanHub_01_P'),
+            AS('/Game/PatchDLC/Indigo1/Common/Animation/WheelOfFate/AS_WheelOfFate_Spinner_Open', target='Ind_CaravanHub_01_P'),
+            AS('/Game/PatchDLC/Indigo1/Common/Animation/WheelOfFate/AS_WheelOfFate_Spinner_Close', target='Ind_CaravanHub_01_P'),
+            ]),
         ]:
 
     mod.comment(cat_name)
@@ -682,6 +690,12 @@ for category, cat_scale, io_objs in [
         ('Mission-Specific Machines', global_scale, [
             ]),
         ('Other Machines', global_scale, [
+            # Also tweaking its loot-spew a little bit, below
+            IO('/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate',
+                label="Wheel of Fate",
+                level='Ind_CaravanHub_01_P',
+                timelinelength=False,
+                ),
             ]),
         ]:
 
@@ -844,6 +858,68 @@ for label, level, obj_name, speed, travel_time in sorted([
             travel_time/global_scale,
             )
     mod.newline()
+
+# Wheel of Fate
+mod.header('Mission/Level Specific: Wheel of Fate')
+
+# This modification in specific is a bit silly, but I figured I should
+# guard against having the loot spew get cut off, in case there's timing
+# isuses.
+mod.comment('loot-spew rate increase')
+mod.reg_hotfix(Mod.LEVEL, 'Ind_CaravanHub_01_P',
+        '/Game/PatchDLC/Indigo1/Common/Maps/CaravanHub_01/Ind_CaravanHub_01_Art.Ind_CaravanHub_01_Art:PersistentLevel.IO_WheelOfFate_2.OakLootable',
+        'TimeToSpawnLootOver',
+        # default: 1
+        0.5,
+        )
+mod.newline()
+
+# Honestly I have no idea what any of these actually do, since I honestly
+# can't tell any difference when any of them are set.  I guess I'll keep
+# 'em in, though.
+mod.comment('Bytecode Delays')
+for index, default in [
+        (699, 0.5),
+        (1061, 0.9),
+        (1210, 1.4),
+        ([5182, 5718], 2),
+        # This one, amusingly, controls the blink frequency.  Does a
+        # random interval from 0 to this number.
+        #(9413, 5),
+        ]:
+    mod.bytecode_hotfix(Mod.LEVEL, 'Ind_CaravanHub_01_P',
+            '/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate',
+            'ExecuteUbergraph_IO_WheelOfFate',
+            index,
+            default,
+            default/global_scale,
+            )
+mod.newline()
+
+# This is the main speedup, really, apart from the IO() tweak
+mod.comment('Wheel Rotation Time')
+mod.reg_hotfix(Mod.LEVEL, 'Ind_CaravanHub_01_P',
+        '/Game/PatchDLC/Indigo1/Common/Maps/CaravanHub_01/Ind_CaravanHub_01_Art.Ind_CaravanHub_01_Art:PersistentLevel.IO_WheelOfFate_2.WheelRotation',
+        'TheTimeline.Length',
+        5/global_scale,
+        )
+mod.newline()
+
+# Like with the Wheel of Fate AnimSequence tweaks, I suspect that a number
+# of these aren't actually needed.
+mod.comment('ParticleSystems')
+for ps_name in [
+        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange',
+        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange_Screen',
+        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange_Select',
+        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye',
+        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke',
+        ]:
+    scale_ps(mod, data, Mod.LEVEL, 'Ind_CaravanHub_01_P',
+            ps_name,
+            global_scale,
+            )
+mod.newline()
 
 # Slapping in the getall here 'cause I always have to reconstruct the buggers every time:
 # getall gbxlevelsequenceplayer PlaybackSettings name=AnimationPlayer outer=SEQ_FatemakerShrine
