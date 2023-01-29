@@ -14,16 +14,25 @@ finish it properly
 
 Currently, the mod attempts to affect the following:
 
-* Lootable Containers, Doors, Wheel of Fate...
+* Lootable Containers, Doors, Elevators, Wheel of Fate, Lost Loot Machine,
+  etc...
 
-Things not covered by the mod:
+
+Not Handled By This Mod
+=======================
+
+Some things intentionally *not* handled by the mod, either because they were
+already pretty good speedwise, because speedups would've caused dialogue
+skips, or because it just felt right to leave 'em alone:
+
 * The initial spawning of Overworld random encounter enemies
 
-TODO
-====
+Known Bugs / TODO
+=================
 
 * Haven't yet really run through the game often enough to have a feel
   for what might feel slow still.
+* Lost Loot machine opening/closing -- can't seem to get those to speed up.
 
 Changelog
 =========
@@ -35,6 +44,7 @@ Changelog
    * Photo Mode activation time
    * Fast-travel/teleport/resurrect skips
    * Random Encounter + Dungeon speedups
+   * Lost Loot Machine
    * Wheel of Fate
 
 **v0.9.0** - Jul 28, 2022

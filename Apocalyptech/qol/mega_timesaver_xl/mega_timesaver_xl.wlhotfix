@@ -889,6 +889,12 @@ SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/I
 ###
 
 ###
+### Lost Loot Machine Gear-Spawning Delay
+###
+
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/GameSystemMachines/LostLootMachine/_Design/BP_LostLootMachine.BP_LostLootMachine_C:OakLostLoot_GEN_VARIABLE,DelayBetweenSpawningItem,0,,0.1875
+
+###
 ### Mission/Level Specific: Wheel of Fate
 ###
 

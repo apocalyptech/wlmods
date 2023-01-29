@@ -859,6 +859,16 @@ for label, level, obj_name, speed, travel_time in sorted([
             )
     mod.newline()
 
+# Lost Loot Machine -- See BL3's Mega TimeSaver XL for some other notes about
+# what I'd *ideally* like to do with this.  The same restrictions seem to apply.
+mod.header('Lost Loot Machine Gear-Spawning Delay')
+mod.reg_hotfix(Mod.LEVEL, 'MatchAll',
+        '/Game/InteractiveObjects/GameSystemMachines/LostLootMachine/_Design/BP_LostLootMachine.BP_LostLootMachine_C:OakLostLoot_GEN_VARIABLE',
+        'DelayBetweenSpawningItem',
+        0.75/global_scale,
+        )
+mod.newline()
+
 # Wheel of Fate
 mod.header('Mission/Level Specific: Wheel of Fate')
 
