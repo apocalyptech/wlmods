@@ -859,6 +859,17 @@ for label, level, obj_name, speed, travel_time in sorted([
             )
     mod.newline()
 
+# Overworld chest loot-spawn delay
+mod.header('Overworld chest loot-spawn delay')
+mod.bytecode_hotfix(Mod.LEVEL, 'Overworld_P',
+        '/Game/Lootables/_Design/Classes/Overworld/BPIO_Lootable_Overworld_Chest',
+        'ExecuteUbergraph_BPIO_Lootable_Overworld_Chest',
+        108,
+        0.6,
+        0,
+        )
+mod.newline()
+
 # Lost Loot Machine -- See BL3's Mega TimeSaver XL for some other notes about
 # what I'd *ideally* like to do with this.  The same restrictions seem to apply.
 mod.header('Lost Loot Machine Gear-Spawning Delay')

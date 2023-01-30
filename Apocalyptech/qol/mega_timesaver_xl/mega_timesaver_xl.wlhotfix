@@ -889,6 +889,12 @@ SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/I
 ###
 
 ###
+### Overworld chest loot-spawn delay
+###
+
+SparkLevelPatchEntry,(1,7,0,Overworld_P),/Game/Lootables/_Design/Classes/Overworld/BPIO_Lootable_Overworld_Chest.BPIO_Lootable_Overworld_Chest_C,0,1,ExecuteUbergraph_BPIO_Lootable_Overworld_Chest,1,108,3:0.6,1:0
+
+###
 ### Lost Loot Machine Gear-Spawning Delay
 ###
 

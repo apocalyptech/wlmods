@@ -33,6 +33,15 @@ Known Bugs / TODO
 * Haven't yet really run through the game often enough to have a feel
   for what might feel slow still.
 * Lost Loot machine opening/closing -- can't seem to get those to speed up.
+* The loot from some containers in the overworld (Crates, Pottery) get picked
+  up immediately on spawn (so long as the player's in range) but the loot from
+  others (chests, barrels) does NOT.  The most useful comparison would be
+  between the destructible ones, so check out `/Game/Lootables/_Design/Classes/Destructibles/Overworld`.
+  I can hardly see any difference, alas.  I think the answer might be that
+  the immediate-pickup ones seem to use `BP_LootableDestructible` whereas
+  the non-immediate-pickup ones use `BP_LootableDestructible_Daffodil`.
+  I can't see anything useful between those two -- the `_Daffodil` version
+  just includes some Mimic-related code.
 
 Changelog
 =========
