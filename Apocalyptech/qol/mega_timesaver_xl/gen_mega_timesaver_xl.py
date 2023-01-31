@@ -961,6 +961,36 @@ mod.reg_hotfix(Mod.LEVEL, 'Tutorial_P',
         )
 mod.newline()
 
+# Tome of Fate secret stairs in Shattergrave Barrow
+mod.header('Tome of Fate secret stairs in Shattergrave Barrow')
+mod.reg_hotfix(Mod.LEVEL, 'Graveyard_P',
+        '/Game/Maps/Zone_1/Graveyard/Graveyard_Blockout.Graveyard_Blockout:PersistentLevel.SEQ_Graveyard_SecretStairs_14.AnimationPlayer',
+        'PlaybackSettings.PlayRate',
+        global_scale,
+        )
+mod.newline()
+
+# Brighthoof town restoration during A Hard Day's Knight
+# Not speeding this up by our full amount -- there's some skybox transitions which linger
+# otherwise, which looks weird, and I got tired of trying to track them down.  Also it
+# kind of looks better at this speed anyway.
+mod.header("Brighthoof town restoration during A Hard Day's Knight")
+mod.reg_hotfix(Mod.LEVEL, 'Hubtown_P',
+        '/Game/Maps/Zone_1/Hubtown/Hubtown_M_SwordThatSucks.Hubtown_M_SwordThatSucks:PersistentLevel.SEQ_ButtStallionStatue.AnimationPlayer',
+        'PlaybackSettings.PlayRate',
+        2,
+        )
+mod.newline()
+
+# Butt Stallion statue creation during A Hard Day's Knight
+mod.header('Butt Stallion statue creation')
+mod.reg_hotfix(Mod.LEVEL, 'Hubtown_P',
+        '/Game/Maps/Zone_1/Hubtown/Hubtown_M_Plot2RestoreTown.Hubtown_M_Plot2RestoreTown:PersistentLevel.SEQ_ButtStallionStatueCelebration_2.AnimationPlayer',
+        'PlaybackSettings.PlayRate',
+        global_scale,
+        )
+mod.newline()
+
 mod.header('NPC Walking Speeds')
 
 class Char():

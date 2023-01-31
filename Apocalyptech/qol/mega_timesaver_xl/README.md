@@ -55,6 +55,11 @@ Changelog
    * Random Encounter + Dungeon speedups
    * Lost Loot Machine
    * Wheel of Fate
+ * Mission/Level Specific Objects:
+   * Starting platform-rise in Snoring Valley
+   * Intro gate in Snoring Valley
+   * Tome of Fate secret stairs in Shattergrave Barrow
+   * Sword of Souls town-restoration sequences in Brighthoof
 
 **v0.9.0** - Jul 28, 2022
  * Initial beta release.  Incomplete, but should be handy regardless!

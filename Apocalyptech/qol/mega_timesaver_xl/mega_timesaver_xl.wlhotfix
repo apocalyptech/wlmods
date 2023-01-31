@@ -954,6 +954,24 @@ SparkLevelPatchEntry,(1,1,0,Tutorial_P),/Game/Maps/Zone_1/Tutorial/Tutorial_M_Pl
 SparkLevelPatchEntry,(1,1,0,Tutorial_P),/Game/Maps/Zone_1/Tutorial/Tutorial_M_Plot0Tutorial.Tutorial_M_Plot0Tutorial:PersistentLevel.IO_Door_550x550_IntroGate_2.BarricadeMovementTimeline,TheTimeline.Length,0,,0.3125
 
 ###
+### Tome of Fate secret stairs in Shattergrave Barrow
+###
+
+SparkLevelPatchEntry,(1,1,0,Graveyard_P),/Game/Maps/Zone_1/Graveyard/Graveyard_Blockout.Graveyard_Blockout:PersistentLevel.SEQ_Graveyard_SecretStairs_14.AnimationPlayer,PlaybackSettings.PlayRate,0,,4
+
+###
+### Brighthoof town restoration during A Hard Day's Knight
+###
+
+SparkLevelPatchEntry,(1,1,0,Hubtown_P),/Game/Maps/Zone_1/Hubtown/Hubtown_M_SwordThatSucks.Hubtown_M_SwordThatSucks:PersistentLevel.SEQ_ButtStallionStatue.AnimationPlayer,PlaybackSettings.PlayRate,0,,2
+
+###
+### Butt Stallion statue creation
+###
+
+SparkLevelPatchEntry,(1,1,0,Hubtown_P),/Game/Maps/Zone_1/Hubtown/Hubtown_M_Plot2RestoreTown.Hubtown_M_Plot2RestoreTown:PersistentLevel.SEQ_ButtStallionStatueCelebration_2.AnimationPlayer,PlaybackSettings.PlayRate,0,,4
+
+###
 ### NPC Walking Speeds
 ###
 
