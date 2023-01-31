@@ -14,8 +14,8 @@ finish it properly
 
 Currently, the mod attempts to affect the following:
 
-* Lootable Containers, Doors, Elevators, Wheel of Fate, Lost Loot Machine,
-  etc...
+* Lootable Containers, Doors, Elevators, Loot Dice, Wheel of Fate, Lost
+  Loot Machine, etc...
 
 
 Not Handled By This Mod
@@ -42,6 +42,9 @@ Known Bugs / TODO
   the non-immediate-pickup ones use `BP_LootableDestructible_Daffodil`.
   I can't see anything useful between those two -- the `_Daffodil` version
   just includes some Mimic-related code.
+* The yellow glow after rolling Lucky Dice hangs around for the usual duration.
+  No idea what controls that, but it doesn't get in the way of the sped-up
+  loot shower.
 
 Changelog
 =========
@@ -55,6 +58,7 @@ Changelog
    * Random Encounter + Dungeon speedups
    * Lost Loot Machine
    * Wheel of Fate
+   * Lucky Dice
  * Mission/Level Specific Objects:
    * Starting platform-rise in Snoring Valley
    * Intro gate in Snoring Valley

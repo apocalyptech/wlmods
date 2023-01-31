@@ -690,6 +690,10 @@ for category, cat_scale, io_objs in [
         ('Mission-Specific Machines', global_scale, [
             ]),
         ('Other Machines', global_scale, [
+            # See also: a bytecode tweak below
+            IO('/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice',
+                label="Lucky Dice",
+                ),
             # Also tweaking its loot-spew a little bit, below
             IO('/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate',
                 label="Wheel of Fate",
@@ -858,6 +862,25 @@ for label, level, obj_name, speed, travel_time in sorted([
             travel_time/global_scale,
             )
     mod.newline()
+
+# Lucky Dice
+# This is a factor that multiplies the TimelineDuration, to determine when to spawn the
+# gear.  To update TimelineDuration we'd have to touch each individual die, so I'm
+# going after the multiplication factor instead.  There's still a longish glow near
+# the die after you get it, and the dialogue trigger doesn't come until later; no
+# idea what causes that.  (I *have* tried a bunch of stuff to try and fix that, including
+# setting TimelineDuration on individual dice, setting its LootSpawnDelay (which doesn't
+# seem to be used by anything, but whatever), altering the map object TimelineLength
+# stuff, scaling all the relevant ParticleSystems which are referenced, etc, etc...)
+mod.header('Lucky Dice tweak')
+mod.bytecode_hotfix(Mod.LEVEL, 'MatchAll',
+        '/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice',
+        'ExecuteUbergraph_IO_Challenge_GoldenDice',
+        1363,
+        0.9,
+        0.9/global_scale,
+        )
+mod.newline()
 
 # Overworld chest loot-spawn delay
 mod.header('Overworld chest loot-spawn delay')

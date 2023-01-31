@@ -876,6 +876,15 @@ SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/Switches/Lever/De
 ### InteractiveObject Speedups: Other Machines
 ###
 
+# Lucky Dice
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice.IO_Challenge_GoldenDice_C,Timelines.Timelines[0].Object..TimelineLength,0,,0.25
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice.IO_Challenge_GoldenDice_C,Timelines.Timelines[0].Object..EventTracks.EventTracks[0].CurveKeys.Object..FloatCurve.Keys.Keys[0].Time,0,,0.225
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice.IO_Challenge_GoldenDice_C,Timelines.Timelines[0].Object..FloatTracks.FloatTracks[0].CurveFloat.Object..FloatCurve.Keys.Keys[1].Time,0,,0.25
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice.IO_Challenge_GoldenDice_C,Timelines.Timelines[0].Object..FloatTracks.FloatTracks[1].CurveFloat.Object..FloatCurve.Keys.Keys[1].Time,0,,0.047151
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice.IO_Challenge_GoldenDice_C,Timelines.Timelines[0].Object..FloatTracks.FloatTracks[2].CurveFloat.Object..FloatCurve.Keys.Keys[0].Time,0,,0.075
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice.IO_Challenge_GoldenDice_C,Timelines.Timelines[0].Object..FloatTracks.FloatTracks[2].CurveFloat.Object..FloatCurve.Keys.Keys[1].Time,0,,0.2275
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice.IO_Challenge_GoldenDice_C,Timelines.Timelines[0].Object..FloatTracks.FloatTracks[2].CurveFloat.Object..FloatCurve.Keys.Keys[2].Time,0,,0.23
+
 # Wheel of Fate
 SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate.IO_WheelOfFate_C,Timelines.Timelines[0].Object..FloatTracks.FloatTracks[0].CurveFloat.Object..FloatCurve.Keys.Keys[0].Time,0,,-0.000119
 SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate.IO_WheelOfFate_C,Timelines.Timelines[0].Object..FloatTracks.FloatTracks[0].CurveFloat.Object..FloatCurve.Keys.Keys[1].Time,0,,0.9994
@@ -887,6 +896,12 @@ SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/I
 ###
 ### Elevators
 ###
+
+###
+### Lucky Dice tweak
+###
+
+SparkLevelPatchEntry,(1,7,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice.IO_Challenge_GoldenDice_C,0,1,ExecuteUbergraph_IO_Challenge_GoldenDice,1,1363,3:0.9,5:0.225
 
 ###
 ### Overworld chest loot-spawn delay
