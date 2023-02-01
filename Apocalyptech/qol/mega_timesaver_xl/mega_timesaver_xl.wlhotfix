@@ -990,3 +990,9 @@ SparkLevelPatchEntry,(1,1,0,Hubtown_P),/Game/Maps/Zone_1/Hubtown/Hubtown_M_Plot2
 ### NPC Walking Speeds
 ###
 
+# Flora
+SparkCharacterLoadedEntry,(1,1,0,BPchar_FemaleFarmer),/Game/NonPlayerCharacters/_DafGeneric/FemaleFarmer/_Design/Character/BPchar_FemaleFarmer.Default__BPchar_FemaleFarmer_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=840.0,BaseValue=840.0)
+
+# Glornesh
+SparkCharacterLoadedEntry,(1,1,0,BPchar_Goblin_Polka),/Game/Enemies/Goblin/_Unique/PolkaDot/_Design/Character/BPchar_Goblin_Polka.Default__BPchar_Goblin_Polka_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=840.0,BaseValue=840.0)
+

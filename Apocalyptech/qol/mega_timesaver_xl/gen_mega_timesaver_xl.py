@@ -1042,10 +1042,17 @@ class Char():
         return self.name.casefold() < other.name.casefold()
 
 for char in sorted([
-        #Char('Claptrap',
-        #    '/Game/NonPlayerCharacters/Claptrap/_Design/Character/BpChar_Claptrap',
-        #    global_char_scale,
-        #    ),
+        # Flora's only got a short distance to go; a bit silly to be buffing her.  Ah, well.
+        Char('Flora',
+            '/Game/NonPlayerCharacters/_DafGeneric/FemaleFarmer/_Design/Character/BPchar_FemaleFarmer',
+            global_char_scale,
+            ),
+        # Glornesh doesn't actually need to be sped up, but this way she and Flora walk off at close
+        # to the same rate.
+        Char('Glornesh',
+            '/Game/Enemies/Goblin/_Unique/PolkaDot/_Design/Character/BPchar_Goblin_Polka',
+            global_char_scale,
+            ),
         ]):
 
     found_main = False

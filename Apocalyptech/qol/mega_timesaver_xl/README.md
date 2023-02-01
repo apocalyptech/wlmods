@@ -64,6 +64,8 @@ Changelog
    * Intro gate in Snoring Valley
    * Tome of Fate secret stairs in Shattergrave Barrow
    * Sword of Souls town-restoration sequences in Brighthoof
+ * Character Speedups:
+   * Flora and Glornesh (from A Farmer's Ardor)
 
 **v0.9.0** - Jul 28, 2022
  * Initial beta release.  Incomplete, but should be handy regardless!
