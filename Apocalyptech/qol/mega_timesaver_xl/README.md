@@ -68,6 +68,7 @@ Changelog
    * Intro gate in Snoring Valley
    * Tome of Fate secret stairs in Shattergrave Barrow
    * Sword of Souls town-restoration sequences in Brighthoof
+   * Rainbow bridge construction in the Overworld, during Working Blueprint
  * Character Speedups:
    * Flora and Glornesh (from A Farmer's Ardor)
 

@@ -700,10 +700,6 @@ for category, cat_scale, io_objs in [
                 level='Ind_CaravanHub_01_P',
                 timelinelength=False,
                 ),
-            #IO('/Game/InteractiveObjects/_Overworld/MissionSpecific/FumblingAround/MissionScripted/IO_FumblingAround_RainbowBridge',
-            #    label="Overworld Rainbow Bridge",
-            #    level='Overworld_P',
-            #    ),
             ]),
         ]:
 
@@ -894,6 +890,17 @@ mod.bytecode_hotfix(Mod.LEVEL, 'Overworld_P',
         108,
         0.6,
         0,
+        )
+mod.newline()
+
+# Overworld rainbow bridge
+mod.header('Overworld rainbow bridge during Working Blueprint')
+mod.bytecode_hotfix(Mod.LEVEL, 'Overworld_P',
+        '/Game/Maps/Overworld/Overworld_M_FumblingAround',
+        'ExecuteUbergraph_Overworld_M_FumblingAround',
+        2013,
+        13.5,
+        13.5/global_scale,
         )
 mod.newline()
 

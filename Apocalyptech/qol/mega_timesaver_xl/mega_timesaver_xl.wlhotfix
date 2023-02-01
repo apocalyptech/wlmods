@@ -910,6 +910,12 @@ SparkLevelPatchEntry,(1,7,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/Go
 SparkLevelPatchEntry,(1,7,0,Overworld_P),/Game/Lootables/_Design/Classes/Overworld/BPIO_Lootable_Overworld_Chest.BPIO_Lootable_Overworld_Chest_C,0,1,ExecuteUbergraph_BPIO_Lootable_Overworld_Chest,1,108,3:0.6,1:0
 
 ###
+### Overworld rainbow bridge during Working Blueprint
+###
+
+SparkLevelPatchEntry,(1,7,0,Overworld_P),/Game/Maps/Overworld/Overworld_M_FumblingAround.Overworld_M_FumblingAround_C,0,1,ExecuteUbergraph_Overworld_M_FumblingAround,1,2013,4:13.5,3:2.7
+
+###
 ### Lost Loot Machine Gear-Spawning Delay
 ###
 
