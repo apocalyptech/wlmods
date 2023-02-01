@@ -26,6 +26,7 @@ already pretty good speedwise, because speedups would've caused dialogue
 skips, or because it just felt right to leave 'em alone:
 
 * The initial spawning of Overworld random encounter enemies
+* Cheese curl removal sequence in the Overworld
 
 Known Bugs / TODO
 =================
@@ -45,13 +46,16 @@ Known Bugs / TODO
 * The yellow glow after rolling Lucky Dice hangs around for the usual duration.
   No idea what controls that, but it doesn't get in the way of the sped-up
   loot shower.
+* Maybe re-test up to Brighthoof restoration (and remainder of Queen's Gate)?
+  Basically everything before Weepwild Dankness (and also before Mount Craw).
+  I bumped the speed increase back up to 5x; WL containers seem a bit slower
+  than BL3's.
 
 Changelog
 =========
 
 **v1.0.0** - *(unreleased)*
  * Merged in a lot of internal infrastructure from the now-"finished" BL3 version
- * Reduced our "standard" speed improvement from 5x to 4x (except for doors)
  * New Additions:
    * Photo Mode activation time
    * Fast-travel/teleport/resurrect skips
