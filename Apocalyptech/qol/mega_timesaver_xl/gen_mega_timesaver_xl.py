@@ -1055,6 +1055,44 @@ mod.reg_hotfix(Mod.LEVEL, 'Goblin_P',
         )
 mod.newline()
 
+# Extra-Caliber extraction during A Knight's Toil, in Weepwild Dankness
+mod.header("Mission/Level Specific: A Knight's Toil Tweaks")
+
+mod.comment('Extra-Caliber extraction')
+mod.reg_hotfix(Mod.LEVEL, 'Mushroom_P',
+        '/Game/Maps/Zone_1/Mushroom/Mushroom_M_HolyGrenade.Mushroom_M_HolyGrenade:PersistentLevel.SEQ_ClaptrapGrenade_RaiseSword_2.AnimationPlayer',
+        'PlaybackSettings.PlayRate',
+        global_scale,
+        )
+mod.bytecode_hotfix(Mod.LEVEL, 'Mushroom_P',
+        '/Game/Missions/Side/Zone_1/Mushroom/Mission_ClaptrapGrenade',
+        'ExecuteUbergraph_Mission_ClaptrapGrenade',
+        8020,
+        17,
+        17/global_scale,
+        )
+mod.newline()
+
+# This one looks a bit silly if it's too quick; 2.5x is plenty
+mod.comment('Claptrap recovery after Extra-Caliber')
+mod.bytecode_hotfix(Mod.LEVEL, 'Mushroom_P',
+        '/Game/Maps/Zone_1/Mushroom/Mushroom_M_HolyGrenade',
+        'ExecuteUbergraph_Mushroom_M_HolyGrenade',
+        34342,
+        1,
+        global_scale/2,
+        )
+mod.newline()
+
+# Mushroom growth in Little Boys Blue
+mod.header('Mission/Level Specific: Mushroom growth in Little Boys Blue')
+mod.reg_hotfix(Mod.LEVEL, 'Mushroom_P',
+        '/Game/Maps/Zone_1/Mushroom/Mushroom_M_BlueOnes.Mushroom_M_BlueOnes:PersistentLevel.SEQ_BlueOnes_MushroomGrow.AnimationPlayer',
+        'PlaybackSettings.PlayRate',
+        global_scale,
+        )
+mod.newline()
+
 mod.header('NPC Walking Speeds')
 
 class Char():
@@ -1096,6 +1134,10 @@ for char in sorted([
             ),
         Char('Jar',
             '/Game/Enemies/Goblin/_Unique/Jar/_Design/Character/BPChar_Goblin_Jar',
+            global_char_scale,
+            ),
+        Char('Torgue',
+            '/Game/NonPlayerCharacters/Torgue/_Design/Character/BPChar_Torgue',
             global_char_scale,
             )
         ]):

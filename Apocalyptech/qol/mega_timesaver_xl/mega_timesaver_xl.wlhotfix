@@ -1007,6 +1007,23 @@ SparkLevelPatchEntry,(1,7,0,Goblin_P),/Game/Missions/Side/Zone_1/Goblin/Mission_
 SparkLevelPatchEntry,(1,1,0,Goblin_P),/Game/Maps/Zone_1/Goblin/Goblin_M_MurderHobos.Goblin_M_MurderHobos:PersistentLevel.IO_Door_550x550_IntroGate_2.BarricadeMovementTimeline,TheTimeline.Length,0,,0.25
 
 ###
+### Mission/Level Specific: A Knight's Toil Tweaks
+###
+
+# Extra-Caliber extraction
+SparkLevelPatchEntry,(1,1,0,Mushroom_P),/Game/Maps/Zone_1/Mushroom/Mushroom_M_HolyGrenade.Mushroom_M_HolyGrenade:PersistentLevel.SEQ_ClaptrapGrenade_RaiseSword_2.AnimationPlayer,PlaybackSettings.PlayRate,0,,5
+SparkLevelPatchEntry,(1,7,0,Mushroom_P),/Game/Missions/Side/Zone_1/Mushroom/Mission_ClaptrapGrenade.Mission_ClaptrapGrenade_C,0,1,ExecuteUbergraph_Mission_ClaptrapGrenade,1,8020,2:17,3:3.4
+
+# Claptrap recovery after Extra-Caliber
+SparkLevelPatchEntry,(1,7,0,Mushroom_P),/Game/Maps/Zone_1/Mushroom/Mushroom_M_HolyGrenade.Mushroom_M_HolyGrenade_C,0,1,ExecuteUbergraph_Mushroom_M_HolyGrenade,1,34342,1:1,3:2.5
+
+###
+### Mission/Level Specific: Mushroom growth in Little Boys Blue
+###
+
+SparkLevelPatchEntry,(1,1,0,Mushroom_P),/Game/Maps/Zone_1/Mushroom/Mushroom_M_BlueOnes.Mushroom_M_BlueOnes:PersistentLevel.SEQ_BlueOnes_MushroomGrow.AnimationPlayer,PlaybackSettings.PlayRate,0,,5
+
+###
 ### NPC Walking Speeds
 ###
 
@@ -1018,4 +1035,7 @@ SparkCharacterLoadedEntry,(1,1,0,BPchar_Goblin_Polka),/Game/Enemies/Goblin/_Uniq
 
 # Jar
 SparkCharacterLoadedEntry,(1,1,0,BPChar_Goblin_Jar),/Game/Enemies/Goblin/_Unique/Jar/_Design/Character/BPChar_Goblin_Jar.Default__BPChar_Goblin_Jar_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=560.0,BaseValue=560.0)
+
+# Torgue
+SparkCharacterLoadedEntry,(1,1,0,BPChar_Torgue),/Game/NonPlayerCharacters/Torgue/_Design/Character/BPChar_Torgue.Default__BPChar_Torgue_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=840.0,BaseValue=840.0)
 

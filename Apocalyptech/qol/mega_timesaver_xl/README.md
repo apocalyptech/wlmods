@@ -46,6 +46,8 @@ Known Bugs / TODO
 * The yellow glow after rolling Lucky Dice hangs around for the usual duration.
   No idea what controls that, but it doesn't get in the way of the sped-up
   loot shower.
+* The Tooth Fairy's mimic chest during Cash 4 Teeth, in Weepwild Dankness, goes
+  absolutely crazy after you put the teeth in.
 * Maybe re-test up to Brighthoof restoration (and remainder of Queen's Gate)?
   Basically everything before Weepwild Dankness (and also before Mount Craw).
   I bumped the speed increase back up to 5x; WL containers seem a bit slower
@@ -73,9 +75,13 @@ Changelog
    * Sword of Souls town-restoration sequences in Brighthoof
    * Rainbow bridge construction in the Overworld, during Working Blueprint
    * Forgery furnace sequence in Mount Craw
+   * Extracting Extra-Caliber in Weepwild Dankness, during A Knight's Toil,
+     and Claptrap's jetpack recovery immediately after
+   * Mushroom growth during Little Boys Blue, in Weepwild Dankness
  * Character Speedups:
    * Flora and Glornesh (from A Farmer's Ardor)
    * Jar
+   * Torgue
 
 **v0.9.0** - Jul 28, 2022
  * Initial beta release.  Incomplete, but should be handy regardless!
