@@ -56,6 +56,9 @@ Changelog
 
 **v1.0.0** - *(unreleased)*
  * Merged in a lot of internal infrastructure from the now-"finished" BL3 version
+ * More doors:
+   * Intro door after reviving villager
+   * Door after goblin guard, in Mount Craw during Non-Violent Offender
  * New Additions:
    * Photo Mode activation time
    * Fast-travel/teleport/resurrect skips
@@ -69,8 +72,10 @@ Changelog
    * Tome of Fate secret stairs in Shattergrave Barrow
    * Sword of Souls town-restoration sequences in Brighthoof
    * Rainbow bridge construction in the Overworld, during Working Blueprint
+   * Forgery furnace sequence in Mount Craw
  * Character Speedups:
    * Flora and Glornesh (from A Farmer's Ardor)
+   * Jar
 
 **v0.9.0** - Jul 28, 2022
  * Initial beta release.  Incomplete, but should be handy regardless!

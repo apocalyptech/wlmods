@@ -987,7 +987,7 @@ mod.reg_hotfix(Mod.LEVEL, 'Tutorial_P',
 mod.newline()
 
 # Intro gate after reviving townsperson
-mod.header('Intro gate timing speedup')
+mod.header('Mission/Level Specific: Intro gate timing speedup')
 mod.reg_hotfix(Mod.LEVEL, 'Tutorial_P',
         '/Game/Maps/Zone_1/Tutorial/Tutorial_M_Plot0Tutorial.Tutorial_M_Plot0Tutorial:PersistentLevel.IO_Door_550x550_IntroGate_2.BarricadeMovementTimeline',
         'TheTimeline.Length',
@@ -996,7 +996,7 @@ mod.reg_hotfix(Mod.LEVEL, 'Tutorial_P',
 mod.newline()
 
 # Tome of Fate secret stairs in Shattergrave Barrow
-mod.header('Tome of Fate secret stairs in Shattergrave Barrow')
+mod.header('Mission/Level Specific: Tome of Fate secret stairs in Shattergrave Barrow')
 mod.reg_hotfix(Mod.LEVEL, 'Graveyard_P',
         '/Game/Maps/Zone_1/Graveyard/Graveyard_Blockout.Graveyard_Blockout:PersistentLevel.SEQ_Graveyard_SecretStairs_14.AnimationPlayer',
         'PlaybackSettings.PlayRate',
@@ -1008,7 +1008,7 @@ mod.newline()
 # Not speeding this up by our full amount -- there's some skybox transitions which linger
 # otherwise, which looks weird, and I got tired of trying to track them down.  Also it
 # kind of looks better at this speed anyway.
-mod.header("Brighthoof town restoration during A Hard Day's Knight")
+mod.header("Mission/Level Specific: Brighthoof town restoration during A Hard Day's Knight")
 mod.reg_hotfix(Mod.LEVEL, 'Hubtown_P',
         '/Game/Maps/Zone_1/Hubtown/Hubtown_M_SwordThatSucks.Hubtown_M_SwordThatSucks:PersistentLevel.SEQ_ButtStallionStatue.AnimationPlayer',
         'PlaybackSettings.PlayRate',
@@ -1017,11 +1017,41 @@ mod.reg_hotfix(Mod.LEVEL, 'Hubtown_P',
 mod.newline()
 
 # Butt Stallion statue creation during A Hard Day's Knight
-mod.header('Butt Stallion statue creation')
+mod.header('Mission/Level Specific: Butt Stallion statue creation')
 mod.reg_hotfix(Mod.LEVEL, 'Hubtown_P',
         '/Game/Maps/Zone_1/Hubtown/Hubtown_M_Plot2RestoreTown.Hubtown_M_Plot2RestoreTown:PersistentLevel.SEQ_ButtStallionStatueCelebration_2.AnimationPlayer',
         'PlaybackSettings.PlayRate',
         global_scale,
+        )
+mod.newline()
+
+# Furnace in Forgery
+mod.header('Mission/Level Specific: Forgery furnace, in Mount Craw')
+mod.reg_hotfix(Mod.LEVEL, 'Goblin_P',
+        '/Game/Maps/Zone_1/Goblin/Goblin_M_SmithsCharade.Goblin_M_SmithsCharade:PersistentLevel.SEQ_SmithCharade_Furnace_2.AnimationPlayer',
+        'PlaybackSettings.PlayRate',
+        global_scale,
+        )
+mod.reg_hotfix(Mod.LEVEL, 'Goblin_P',
+        '/Game/Maps/Zone_1/Goblin/Goblin_M_SmithsCharade.Goblin_M_SmithsCharade:PersistentLevel.IO_MissionScripted_SmithsCharade_Furnace_2',
+        'DelayBeforePlayingSequence',
+        1/global_scale,
+        )
+mod.bytecode_hotfix(Mod.LEVEL, 'Goblin_P',
+        '/Game/Missions/Side/Zone_1/Goblin/Mission_SmithsCharade',
+        'ExecuteUbergraph_Mission_SmithsCharade',
+        20920,
+        8,
+        8/global_scale,
+        )
+mod.newline()
+
+# Gate after getting past guard in Non-Violent Offender
+mod.header('Mission/Level Specific: Non-Violent Offender guard gate, in Mount Craw')
+mod.reg_hotfix(Mod.LEVEL, 'Goblin_P',
+        '/Game/Maps/Zone_1/Goblin/Goblin_M_MurderHobos.Goblin_M_MurderHobos:PersistentLevel.IO_Door_550x550_IntroGate_2.BarricadeMovementTimeline',
+        'TheTimeline.Length',
+        1.25/global_scale,
         )
 mod.newline()
 
@@ -1064,6 +1094,10 @@ for char in sorted([
             '/Game/Enemies/Goblin/_Unique/PolkaDot/_Design/Character/BPchar_Goblin_Polka',
             global_char_scale,
             ),
+        Char('Jar',
+            '/Game/Enemies/Goblin/_Unique/Jar/_Design/Character/BPChar_Goblin_Jar',
+            global_char_scale,
+            )
         ]):
 
     found_main = False
