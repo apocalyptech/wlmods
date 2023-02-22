@@ -669,6 +669,9 @@ for category, cat_scale, io_objs in [
             #IO('/Game/InteractiveObjects/Doors/Pyramid/_Design/IO_Taint_ExplodingPyramidDoorSimplified'),
             # No main TimelineLength
             #IO('/Game/InteractiveObjects/Doors/Pyramid/_Design/IO_Taint_ExplodingPyramidDoor'),
+            IO('/Game/Missions/Side/Overworld/Overworld/BlessedBeThySword/IO_Door_RoyalReserve',
+                level='Overworld_P',
+                ),
             IO('/Game/PatchDLC/Indigo1/Common/InteractiveObjects/Doors/IO_Door_Indigo_Portcullis_02'),
             # No main TimelineLength
             #IO('/Game/PatchDLC/Indigo1/Common/InteractiveObjects/Doors/IO_Door_Indigo_Portcullis'),
@@ -1088,6 +1091,15 @@ mod.newline()
 mod.header('Mission/Level Specific: Mushroom growth in Little Boys Blue')
 mod.reg_hotfix(Mod.LEVEL, 'Mushroom_P',
         '/Game/Maps/Zone_1/Mushroom/Mushroom_M_BlueOnes.Mushroom_M_BlueOnes:PersistentLevel.SEQ_BlueOnes_MushroomGrow.AnimationPlayer',
+        'PlaybackSettings.PlayRate',
+        global_scale,
+        )
+mod.newline()
+
+# Inner Daemons secret stairs in Brighthoof
+mod.header('Mission/Level Specific: Inner Daemons secret stairs in Brighthoof')
+mod.reg_hotfix(Mod.LEVEL, 'Hubtown_P',
+        '/Game/Maps/Zone_1/Hubtown/Hubtown_M_InnerDemons.Hubtown_M_InnerDemons:PersistentLevel.SEQ_Hubtown_GTFO_SecretStairs_2.AnimationPlayer',
         'PlaybackSettings.PlayRate',
         global_scale,
         )

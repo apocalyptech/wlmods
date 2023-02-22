@@ -61,6 +61,7 @@ Changelog
  * More doors:
    * Intro door after reviving villager
    * Door after goblin guard, in Mount Craw during Non-Violent Offender
+   * Overworld shrine door at the end of A Realm In Peril
  * New Additions:
    * Photo Mode activation time
    * Fast-travel/teleport/resurrect skips
@@ -78,6 +79,7 @@ Changelog
    * Extracting Extra-Caliber in Weepwild Dankness, during A Knight's Toil,
      and Claptrap's jetpack recovery immediately after
    * Mushroom growth during Little Boys Blue, in Weepwild Dankness
+   * Inner Daemons secret stairs in Brighthoof
  * Character Speedups:
    * Flora and Glornesh (from A Farmer's Ardor)
    * Jar
