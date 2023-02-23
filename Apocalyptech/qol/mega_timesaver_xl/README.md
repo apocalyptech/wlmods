@@ -61,6 +61,7 @@ Changelog
 
 **v1.0.0** - *(unreleased)*
  * Merged in a lot of internal infrastructure from the now-"finished" BL3 version
+ * Fixed pearl chests in Wargtooth Shallows, during Raiders of the Lost Shark
  * More doors:
    * Intro door after reviving villager
    * Door after goblin guard, in Mount Craw during Non-Violent Offender

@@ -68,6 +68,15 @@ SparkLevelPatchEntry,(1,7,0,MatchAll),/Game/InteractiveObjects/Portals/IO_Encoun
 SparkPatchEntry,(1,7,0,),/Game/GameData/BP_PhotoModeController.BP_PhotoModeController_C,0,1,ExecuteUbergraph_BP_PhotoModeController,1,122,3:1.5,3:0.3
 
 ###
+### Container Injections
+###
+
+# White "Fantasy" Chests in Wargtooth Shallows
+# (Needed for pearl chests during Raiders of the Lost Shark)
+SparkEarlyLevelPatchEntry,(1,11,0,SeaBed_P),/Game/Maps/Zone_2/SeaBed,/Game/Lootables/_Design/Classes/Global,BPIO_Lootable_Daffodil_WhiteChest_01,80,"0.000000,0.000000,0.000000|0.000000,0.000000,0.000000|1.000000,1.000000,1.000000"
+SparkEarlyLevelPatchEntry,(1,1,1,SeaBed_P),/Game/Maps/Zone_2/SeaBed/SeaBed_P.SeaBed_P:PersistentLevel.BPIO_Lootable_Daffodil_WhiteChest_01_C_0.Mesh_Chest1,RelativeLocation,0,,(X=99999.000000,Y=99999.000000,Z=99999.000000)
+
+###
 ### Simple Animation Speedups
 ###
 

@@ -116,6 +116,7 @@ mod = Mod('mega_timesaver_xl.wlhotfix',
         lic=Mod.CC_BY_SA_40,
         v='0.9.0',
         cats='qol',
+        quiet_streaming=True,
         )
 
 ###
@@ -435,6 +436,22 @@ mod.bytecode_hotfix(Mod.PATCH, '',
         122,
         1.5,
         1.5/global_scale,
+        )
+mod.newline()
+
+# Container injections!  We have at least one case where our AS speedups don't take
+# effect because the containers which use them only show up in mission-specific
+# SpawnOptions objects, so their AS objects don't exist when the level first loads.
+# This'll make sure that a necessary object exists so that the ASes can be tweaked
+# properly.
+mod.header('Container Injections')
+
+# White chests spawned using /Game/Missions/Side/Zone_2/SeaBed/SharkPearls/SpawnOptions_Lootable_SharkPearl-*
+mod.comment('White "Fantasy" Chests in Wargtooth Shallows')
+mod.comment('(Needed for pearl chests during Raiders of the Lost Shark)')
+mod.streaming_hotfix('/Game/Maps/Zone_2/SeaBed/SeaBed_P',
+        '/Game/Lootables/_Design/Classes/Global/BPIO_Lootable_Daffodil_WhiteChest_01',
+        location=(99999,99999,99999),
         )
 mod.newline()
 
