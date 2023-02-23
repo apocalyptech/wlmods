@@ -30,6 +30,12 @@ skips, or because it just felt right to leave 'em alone:
 * The Rune Switch Puzzle activation sequence could be sped up, but I feel
   like it's nice to have the time to notice as it lights up the individual
   targets
+* The Crackmast Cove quest "In The Belly is a Beast" has been left alone
+  entirely.  You can use my [In The Belly Is A Beast: Abridged](https://github.com/BLCM/wlmods/wiki/In%20The%20Belly%20Is%20A%20Beast%3A%20Abridged)
+  mod to bypass the majority of it, if you want.
+* Pookie could probably use a speedup (in the Crackmast Cove mission
+  "A Walk to Dismember") but I've left it alone.
+* The long cannon fuse in Crackmast Cove which opens up a red chest room
 
 Known Bugs / TODO
 =================
