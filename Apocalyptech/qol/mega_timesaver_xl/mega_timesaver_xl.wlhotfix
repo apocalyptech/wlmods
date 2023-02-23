@@ -1048,6 +1048,12 @@ SparkLevelPatchEntry,(1,1,0,Mushroom_P),/Game/Maps/Zone_1/Mushroom/Mushroom_M_Bl
 SparkLevelPatchEntry,(1,1,0,Hubtown_P),/Game/Maps/Zone_1/Hubtown/Hubtown_M_InnerDemons.Hubtown_M_InnerDemons:PersistentLevel.SEQ_Hubtown_GTFO_SecretStairs_2.AnimationPlayer,PlaybackSettings.PlayRate,0,,5
 
 ###
+### Mission/Level Specific: Elder Wyvern feeding time in Tangledrift, during Burning Hunger
+###
+
+SparkLevelPatchEntry,(1,7,0,Beanstalk_P),/Game/Missions/Side/Zone_2/Beanstalk/Mission_ElderWyvern.Mission_ElderWyvern_C,0,1,ExecuteUbergraph_Mission_ElderWyvern,1,15823,2:20,3:4.0
+
+###
 ### NPC Walking Speeds
 ###
 
@@ -1059,6 +1065,12 @@ SparkCharacterLoadedEntry,(1,1,0,BPchar_Goblin_Polka),/Game/Enemies/Goblin/_Uniq
 
 # Jar
 SparkCharacterLoadedEntry,(1,1,0,BPChar_Goblin_Jar),/Game/Enemies/Goblin/_Unique/Jar/_Design/Character/BPChar_Goblin_Jar.Default__BPChar_Goblin_Jar_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=560.0,BaseValue=560.0)
+
+# Punchfather
+SparkCharacterLoadedEntry,(1,1,0,BPChar_Brick),/Game/NonPlayerCharacters/Brick/_Design/Character/BPChar_Brick.Default__BPChar_Brick_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=840.0,BaseValue=840.0)
+
+# Ron Rivote
+SparkCharacterLoadedEntry,(1,1,0,BPChar_RonRivote),/Game/NonPlayerCharacters/_DafGeneric/RonRivote/_Design/Character/BPChar_RonRivote.Default__BPChar_RonRivote_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=840.0,BaseValue=840.0)
 
 # Torgue
 SparkCharacterLoadedEntry,(1,1,0,BPChar_Torgue),/Game/NonPlayerCharacters/Torgue/_Design/Character/BPChar_Torgue.Default__BPChar_Torgue_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=840.0,BaseValue=840.0)

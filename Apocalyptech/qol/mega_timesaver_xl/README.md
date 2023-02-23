@@ -27,6 +27,9 @@ skips, or because it just felt right to leave 'em alone:
 
 * The initial spawning of Overworld random encounter enemies
 * Cheese curl removal sequence in the Overworld
+* The Rune Switch Puzzle activation sequence could be sped up, but I feel
+  like it's nice to have the time to notice as it lights up the individual
+  targets
 
 Known Bugs / TODO
 =================
@@ -80,9 +83,12 @@ Changelog
      and Claptrap's jetpack recovery immediately after
    * Mushroom growth during Little Boys Blue, in Weepwild Dankness
    * Inner Daemons secret stairs in Brighthoof
+   * Elder Wyvern feeding time in Tangledrift, during Burning Hunger
  * Character Speedups:
    * Flora and Glornesh (from A Farmer's Ardor)
    * Jar
+   * Punchfather
+   * Ron Rivote
    * Torgue
 
 **v0.9.0** - Jul 28, 2022

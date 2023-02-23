@@ -1105,6 +1105,17 @@ mod.reg_hotfix(Mod.LEVEL, 'Hubtown_P',
         )
 mod.newline()
 
+# Elder Wyvern feeding time in Tangledrift, during Burning Hunger
+mod.header('Mission/Level Specific: Elder Wyvern feeding time in Tangledrift, during Burning Hunger')
+mod.bytecode_hotfix(Mod.LEVEL, 'Beanstalk_P',
+        '/Game/Missions/Side/Zone_2/Beanstalk/Mission_ElderWyvern',
+        'ExecuteUbergraph_Mission_ElderWyvern',
+        15823,
+        20,
+        20/global_scale,
+        )
+mod.newline()
+
 mod.header('NPC Walking Speeds')
 
 class Char():
@@ -1151,7 +1162,15 @@ for char in sorted([
         Char('Torgue',
             '/Game/NonPlayerCharacters/Torgue/_Design/Character/BPChar_Torgue',
             global_char_scale,
-            )
+            ),
+        Char('Punchfather',
+            '/Game/NonPlayerCharacters/Brick/_Design/Character/BPChar_Brick',
+            global_char_scale,
+            ),
+        Char('Ron Rivote',
+            '/Game/NonPlayerCharacters/_DafGeneric/RonRivote/_Design/Character/BPChar_RonRivote',
+            global_char_scale,
+            ),
         ]):
 
     found_main = False
