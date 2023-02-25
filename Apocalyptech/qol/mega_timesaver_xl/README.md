@@ -36,6 +36,10 @@ skips, or because it just felt right to leave 'em alone:
 * Pookie could probably use a speedup (in the Crackmast Cove mission
   "A Walk to Dismember") but I've left it alone.
 * The long cannon fuse in Crackmast Cove which opens up a red chest room
+* Skelevator destruction/construction animations, as well as the skelevator
+  speed itself, in Karnok's Wall.  Speeding up the skelevator itself causes
+  dialogue skips during the story, and you only actually need to ride it
+  the once anyway, since there's a fast travel at the top.
 
 Known Bugs / TODO
 =================
@@ -79,6 +83,7 @@ Changelog
    * Lost Loot Machine
    * Wheel of Fate
    * Lucky Dice
+   * Elevators (including Kwartz platforms in Karnok's Wall)
  * Mission/Level Specific Objects:
    * Starting platform-rise in Snoring Valley
    * Intro gate in Snoring Valley
@@ -97,6 +102,7 @@ Changelog
    * Punchfather
    * Ron Rivote
    * Torgue
+   * Wastard
 
 **v0.9.0** - Jul 28, 2022
  * Initial beta release.  Incomplete, but should be handy regardless!

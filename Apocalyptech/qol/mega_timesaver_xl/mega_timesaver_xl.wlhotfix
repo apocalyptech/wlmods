@@ -924,6 +924,57 @@ SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/I
 ### Elevators
 ###
 
+# Karnok's Wall - Kwartz Platform
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_LavaGoodTime.Climb_M_LavaGoodTime:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_0,ElevatorSpeed,0,,2500.0
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_LavaGoodTime.Climb_M_LavaGoodTime:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_0,ElevatorTravelTime,0,,2.0
+
+# Karnok's Wall - Kwartz Platform
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_LavaGoodTime.Climb_M_LavaGoodTime:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_1,ElevatorSpeed,0,,2500.0
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_LavaGoodTime.Climb_M_LavaGoodTime:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_1,ElevatorTravelTime,0,,2.0
+
+# Karnok's Wall - Kwartz Platform
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_LavaGoodTime.Climb_M_LavaGoodTime:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_2,ElevatorSpeed,0,,2500.0
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_LavaGoodTime.Climb_M_LavaGoodTime:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_2,ElevatorTravelTime,0,,2.0
+
+# Karnok's Wall - Kwartz Platform
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_0,ElevatorSpeed,0,,2500.0
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_0,ElevatorTravelTime,0,,2.0
+
+# Karnok's Wall - Kwartz Platform
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_4,ElevatorSpeed,0,,4000.0
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_4,ElevatorTravelTime,0,,2.0
+
+# Karnok's Wall - Kwartz Platform
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_6,ElevatorSpeed,0,,2500.0
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_6,ElevatorTravelTime,0,,2.0
+
+# Karnok's Wall - Kwartz Platform
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_7,ElevatorSpeed,0,,2500.0
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_7,ElevatorTravelTime,0,,2.0
+
+# Karnok's Wall - Kwartz Platform
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_P.Climb_P:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_1,ElevatorSpeed,0,,2500.0
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_P.Climb_P:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_1,ElevatorTravelTime,0,,2.0
+
+# Karnok's Wall - Kwartz Platform
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_P.Climb_P:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_2,ElevatorSpeed,0,,2500.0
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_P.Climb_P:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_2,ElevatorTravelTime,0,,2.0
+
+# Karnok's Wall - Kwartz Platform
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_P.Climb_P:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_4,ElevatorSpeed,0,,2500.0
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_P.Climb_P:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_4,ElevatorTravelTime,0,,2.0
+
+# Karnok's Wall - Small Elevator
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2,ElevatorSpeed,0,,1000
+SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2,ElevatorTravelTime,0,,1.6
+
+###
+### Extra Elevator Tweaks
+###
+
+# Karnok's Wall Small Elevator Delay
+SparkLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2,SwitchDelayTime,0,,0
+
 ###
 ### Lucky Dice tweak
 ###
@@ -1083,4 +1134,7 @@ SparkCharacterLoadedEntry,(1,1,0,BPChar_RonRivote),/Game/NonPlayerCharacters/_Da
 
 # Torgue
 SparkCharacterLoadedEntry,(1,1,0,BPChar_Torgue),/Game/NonPlayerCharacters/Torgue/_Design/Character/BPChar_Torgue.Default__BPChar_Torgue_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=840.0,BaseValue=840.0)
+
+# Wastard
+SparkCharacterLoadedEntry,(1,1,0,BPChar_Wastard),/Game/NonPlayerCharacters/Wastard/_Design/Character/BPChar_Wastard.Default__BPChar_Wastard_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=840.0,BaseValue=840.0)
 

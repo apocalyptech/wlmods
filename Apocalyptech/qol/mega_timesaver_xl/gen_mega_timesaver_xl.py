@@ -830,24 +830,47 @@ for category, cat_scale, io_objs in [
 # `getall Elevator`
 mod.header('Elevators')
 for label, level, obj_name, speed, travel_time in sorted([
-        #("Weepwild Dankness", 'Mushroom_P',
-        #    '/Game/Maps/Zone_1/Mushroom/Mushroom_Boss.Mushroom_Boss:PersistentLevel.Elevator_Banshee_1',
-        #    400, 8),
-        #("Weepwild Dankness", 'Mushroom_P',
-        #    '/Game/Maps/Zone_1/Mushroom/Mushroom_Boss.Mushroom_Boss:PersistentLevel.Elevator_Banshee_2',
-        #    400, 8),
-        #("Weepwild Dankness", 'Mushroom_P',
-        #    '/Game/Maps/Zone_1/Mushroom/Mushroom_Boss.Mushroom_Boss:PersistentLevel.Elevator_Banshee_3',
-        #    400, 8),
-        #("Crackmast Cove", 'Pirate_P',
-        #    '/Game/Maps/Zone_2/Pirate/Pirate_M_CrookedEyePhil.Pirate_M_CrookedEyePhil:PersistentLevel.Elevator_PirateMajor_Pirate_2',
-        #    250, 10),
-        #("Karnok's Wall", 'Climb_P',
-        #    '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2',
-        #    200, 8),
-        #("Karnok's Wall", 'Climb_P',
+        ("Karnok's Wall - Kwartz Platform", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_M_LavaGoodTime.Climb_M_LavaGoodTime:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_0',
+            500.0, 10),
+        ("Karnok's Wall - Kwartz Platform", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_M_LavaGoodTime.Climb_M_LavaGoodTime:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_1',
+            500.0, 10),
+        ("Karnok's Wall - Kwartz Platform", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_M_LavaGoodTime.Climb_M_LavaGoodTime:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_2',
+            500.0, 10),
+        ("Karnok's Wall - Kwartz Platform", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_0',
+            500.0, 10),
+        ("Karnok's Wall - Kwartz Platform", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_4',
+            800.0, 10),
+        ("Karnok's Wall - Kwartz Platform", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_6',
+            500.0, 10),
+        ("Karnok's Wall - Kwartz Platform", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_7',
+            500.0, 10),
+        ("Karnok's Wall - Kwartz Platform", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_P.Climb_P:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_1',
+            500.0, 10),
+        ("Karnok's Wall - Kwartz Platform", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_P.Climb_P:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_2',
+            500.0, 10),
+        ("Karnok's Wall - Kwartz Platform", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_P.Climb_P:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_4',
+            500.0, 10),
+        ("Karnok's Wall - Small Elevator", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2',
+            200, 8),
+
+        # This doesn't actually work -- the actual speeds are set via ubergraph.  However, speeding it up ends
+        # up causing some dialogue skips, so whatever.  You only have to ride the thing once, anyway, and
+        # there's a fast travel right at the top.
+        #("Karnok's Wall - Skelevator", 'Climb_P',
         #    '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_Plot8_Climb_Repaired',
         #    200, 10),
+
         #("Sunfang Oasis", 'Oasis_P',
         #    '/Game/Maps/Zone_3/Oasis/Oasis_M_CloggageOfTheDammed.Oasis_M_CloggageOfTheDammed:PersistentLevel.Elevator_Sewers_WaterRising_6',
         #    75, 10),
@@ -868,20 +891,28 @@ for label, level, obj_name, speed, travel_time in sorted([
         #    200, 8),
         ]):
     mod.comment(label)
-    # Honestly not sure if we need both of these, but we *do* need EarlyLevel.  I'm pretty
-    # sure that the one we *actually* need is TravelTime -- I think the Speed ends up
-    # getting dynamically set.  Whatever, it doesn't *hurt*.
-    #mod.reg_hotfix(Mod.EARLYLEVEL, level,
-    #        obj_name,
-    #        'ElevatorSpeed',
-    #        speed*global_scale,
-    #        )
+    mod.reg_hotfix(Mod.EARLYLEVEL, level,
+            obj_name,
+            'ElevatorSpeed',
+            speed*global_scale,
+            )
     mod.reg_hotfix(Mod.EARLYLEVEL, level,
             obj_name,
             'ElevatorTravelTime',
             travel_time/global_scale,
             )
     mod.newline()
+
+# Extra Elevator Tweaks
+mod.header('Extra Elevator Tweaks')
+
+mod.comment("Karnok's Wall Small Elevator Delay")
+mod.reg_hotfix(Mod.LEVEL, 'Climb_P',
+        '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2',
+        'SwitchDelayTime',
+        0,
+        )
+mod.newline()
 
 # Lucky Dice
 # This is a factor that multiplies the TimelineDuration, to determine when to spawn the
@@ -1186,6 +1217,10 @@ for char in sorted([
             ),
         Char('Ron Rivote',
             '/Game/NonPlayerCharacters/_DafGeneric/RonRivote/_Design/Character/BPChar_RonRivote',
+            global_char_scale,
+            ),
+        Char('Wastard',
+            '/Game/NonPlayerCharacters/Wastard/_Design/Character/BPChar_Wastard',
             global_char_scale,
             ),
         ]):
