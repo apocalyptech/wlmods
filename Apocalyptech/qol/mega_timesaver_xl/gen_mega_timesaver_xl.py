@@ -568,7 +568,12 @@ for cat_name, cat_scale, cat_seqlen_scale, animseqs in [
             AS('/Game/Lootables/_Global/Chest_Gold/Animation/AS_Open'),
             AS('/Game/Lootables/_Global/Chest_Mushroom_White/Animation/AS_Open'),
             AS('/Game/Lootables/_Global/Chest_Overworld/Animation/AS_Open'),
-            AS('/Game/Lootables/_Global/Chest_Sands_Red/Animation/AS_Open'),
+            AS('/Game/Lootables/_Global/Chest_Sands_Red/Animation/AS_Open',
+                # This contianer seems to need to scale the SequenceLength too, otherwise
+                # the loot on the attachments doesn't become active until the original
+                # length.
+                seqlen_scale=global_scale,
+                ),
             AS('/Game/Lootables/_Global/Chest_Seabed_White/Animation/AS_Open'),
             AS('/Game/Lootables/_Global/Crate_ButtStallion_OfferingBox/Animation/AS_Open'),
             AS('/Game/Lootables/_Global/Crate_Fantasy_Ammo/Animation/AS_Open'),
@@ -1221,6 +1226,10 @@ for char in sorted([
             ),
         Char('Wastard',
             '/Game/NonPlayerCharacters/Wastard/_Design/Character/BPChar_Wastard',
+            global_char_scale,
+            ),
+        Char('Curator',
+            '/Game/Enemies/Naga/_Unique/NPC_Curator/_Design/Character/BPChar_NagaCurator',
             global_char_scale,
             ),
         ]):

@@ -72,6 +72,7 @@ Changelog
 **v1.0.0** - *(unreleased)*
  * Merged in a lot of internal infrastructure from the now-"finished" BL3 version
  * Fixed pearl chests in Wargtooth Shallows, during Raiders of the Lost Shark
+ * Fixed upright Zone 3 sarcophagus-like red chest loot-activation timing
  * More doors:
    * Intro door after reviving villager
    * Door after goblin guard, in Mount Craw during Non-Violent Offender
@@ -97,6 +98,7 @@ Changelog
    * Inner Daemons secret stairs in Brighthoof
    * Elder Wyvern feeding time in Tangledrift, during Burning Hunger
  * Character Speedups:
+   * Curator (from The Ditcher)
    * Flora and Glornesh (from A Farmer's Ardor)
    * Jar
    * Punchfather

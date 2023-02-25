@@ -1,9 +1,0 @@
-Upright coffinish chests in Sunfang Oasis have a pretty long delay before
-activating loot beams, when opening.  There's one just to the left when you
-go out of the initial level bit, and are about to jump down the waterfall.
-
-Pearl chests in Raiders of the Lost Shark
-
-Tooth Fairy chest in Weepwild Dankness goes crazy when closed; wonder if
-that's a specific one we can tweak back down to usual, or not.
-

@@ -308,7 +308,7 @@ SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/_Global/Chest_Sands_Red/An
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/_Global/Chest_Sands_Red/Animation/AS_Open.AS_Open,Notifies.Notifies[13].LinkValue,0,,0.35832
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/_Global/Chest_Sands_Red/Animation/AS_Open.AS_Open,Notifies.Notifies[14].SegmentLength,0,,0.366667
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/_Global/Chest_Sands_Red/Animation/AS_Open.AS_Open,Notifies.Notifies[14].LinkValue,0,,0.35832
-SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/_Global/Chest_Sands_Red/Animation/AS_Open.AS_Open,SequenceLength,0,,1.833333
+SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/_Global/Chest_Sands_Red/Animation/AS_Open.AS_Open,SequenceLength,0,,0.366667
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/_Global/Chest_Seabed_White/Animation/AS_Open.AS_Open,RateScale,0,,5
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/_Global/Chest_Seabed_White/Animation/AS_Open.AS_Open,Notifies.Notifies[0].SegmentLength,0,,0.666667
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/Lootables/_Global/Chest_Seabed_White/Animation/AS_Open.AS_Open,Notifies.Notifies[1].SegmentLength,0,,0.666667
@@ -1116,6 +1116,9 @@ SparkLevelPatchEntry,(1,7,0,Beanstalk_P),/Game/Missions/Side/Zone_2/Beanstalk/Mi
 ###
 ### NPC Walking Speeds
 ###
+
+# Curator
+SparkCharacterLoadedEntry,(1,1,0,BPChar_NagaCurator),/Game/Enemies/Naga/_Unique/NPC_Curator/_Design/Character/BPChar_NagaCurator.Default__BPChar_NagaCurator_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=840.0,BaseValue=840.0)
 
 # Flora
 SparkCharacterLoadedEntry,(1,1,0,BPchar_FemaleFarmer),/Game/NonPlayerCharacters/_DafGeneric/FemaleFarmer/_Design/Character/BPchar_FemaleFarmer.Default__BPchar_FemaleFarmer_C,OakCharacterMovement.Object..MaxWalkSpeed,0,,(Value=840.0,BaseValue=840.0)
