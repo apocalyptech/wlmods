@@ -40,6 +40,8 @@ skips, or because it just felt right to leave 'em alone:
   speed itself, in Karnok's Wall.  Speeding up the skelevator itself causes
   dialogue skips during the story, and you only actually need to ride it
   the once anyway, since there's a fast travel at the top.
+* It's tempting to speed up Blue Hat Guy, but there's an eventual objective
+  to catch him, which would be made more difficult if he's faster.
 
 Known Bugs / TODO
 =================
@@ -85,6 +87,7 @@ Changelog
    * Wheel of Fate
    * Lucky Dice
    * Elevators (including Kwartz platforms in Karnok's Wall)
+   * Ossu-Gol Necropolis bridge rollout
  * Mission/Level Specific Objects:
    * Starting platform-rise in Snoring Valley
    * Intro gate in Snoring Valley

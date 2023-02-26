@@ -968,12 +968,30 @@ SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_P.Climb_
 SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2,ElevatorSpeed,0,,1000
 SparkEarlyLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2,ElevatorTravelTime,0,,1.6
 
+# Ossu-Gol Necropolis - Drawbridge (one half)
+SparkEarlyLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_Dynamic.Sands_Dynamic:PersistentLevel.Elevator_SandsBridge_3,ElevatorSpeed,0,,1000
+SparkEarlyLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_Dynamic.Sands_Dynamic:PersistentLevel.Elevator_SandsBridge_3,ElevatorTravelTime,0,,1.6
+
+# Ossu-Gol Necropolis - Drawbridge (the other half)
+SparkEarlyLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_Dynamic.Sands_Dynamic:PersistentLevel.Elevator_SandsBridge_4,ElevatorSpeed,0,,1000
+SparkEarlyLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_Dynamic.Sands_Dynamic:PersistentLevel.Elevator_SandsBridge_4,ElevatorTravelTime,0,,1.6
+
+# Ossu-Gol Necropolis - Main Elevator
+SparkEarlyLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2,ElevatorSpeed,0,,1000
+SparkEarlyLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2,ElevatorTravelTime,0,,1.6
+
 ###
 ### Extra Elevator Tweaks
 ###
 
 # Karnok's Wall Small Elevator Delay
 SparkLevelPatchEntry,(1,1,0,Climb_P),/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2,SwitchDelayTime,0,,0
+
+# Ossu-Gol Necropolis Elevator Delay
+SparkLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2,SwitchDelayTime,0,,0
+
+# Ossu-Gol Necropolis Gear Animations
+SparkLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2.GearTurn,TheTimeline.PlayRate,0,,0.625
 
 ###
 ### Lucky Dice tweak

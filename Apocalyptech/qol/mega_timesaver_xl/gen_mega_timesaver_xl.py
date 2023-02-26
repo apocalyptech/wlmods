@@ -876,21 +876,19 @@ for label, level, obj_name, speed, travel_time in sorted([
         #    '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_Plot8_Climb_Repaired',
         #    200, 10),
 
-        #("Sunfang Oasis", 'Oasis_P',
-        #    '/Game/Maps/Zone_3/Oasis/Oasis_M_CloggageOfTheDammed.Oasis_M_CloggageOfTheDammed:PersistentLevel.Elevator_Sewers_WaterRising_6',
-        #    75, 10),
-        #("Sunfang Oasis", 'Oasis_P',
-        #    '/Game/Maps/Zone_3/Oasis/Oasis_M_CloggageOfTheDammed.Oasis_M_CloggageOfTheDammed:PersistentLevel.Elevator_Sewers_WaterRising_0',
-        #    100, 10),
-        #("Ossu-Gol Necropolis", 'Sands_P',
-        #    '/Game/Maps/Zone_3/Sands/Sands_Dynamic.Sands_Dynamic:PersistentLevel.Elevator_SandsBridge_3',
-        #    200, 8),
-        #("Ossu-Gol Necropolis", 'Sands_P',
-        #    '/Game/Maps/Zone_3/Sands/Sands_Dynamic.Sands_Dynamic:PersistentLevel.Elevator_SandsBridge_4',
-        #    200, 8),
-        #("Ossu-Gol Necropolis", 'Sands_P',
-        #    '/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2',
-        #    200, 8),
+        # These are actually the drawbridge-type thing near the beginning of the level, which happens to
+        # use the Elevator class to do its thing.  Fun!
+        ("Ossu-Gol Necropolis - Drawbridge (one half)", 'Sands_P',
+            '/Game/Maps/Zone_3/Sands/Sands_Dynamic.Sands_Dynamic:PersistentLevel.Elevator_SandsBridge_3',
+            200, 8),
+        ("Ossu-Gol Necropolis - Drawbridge (the other half)", 'Sands_P',
+            '/Game/Maps/Zone_3/Sands/Sands_Dynamic.Sands_Dynamic:PersistentLevel.Elevator_SandsBridge_4',
+            200, 8),
+
+        ("Ossu-Gol Necropolis - Main Elevator", 'Sands_P',
+            '/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2',
+            200, 8),
+
         #("The Fearamid", 'Pyramid_P',
         #    '/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2',
         #    200, 8),
@@ -916,6 +914,24 @@ mod.reg_hotfix(Mod.LEVEL, 'Climb_P',
         '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2',
         'SwitchDelayTime',
         0,
+        )
+mod.newline()
+
+mod.comment("Ossu-Gol Necropolis Elevator Delay")
+mod.reg_hotfix(Mod.LEVEL, 'Sands_P',
+        '/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2',
+        'SwitchDelayTime',
+        0,
+        )
+mod.newline()
+
+# I could've sworn that PlayRate's never done anything useful in here, but it seems necessary to
+# make the gears spin at a rate that looks decent and lasts the appropriate amount of time.  Weird.
+mod.comment("Ossu-Gol Necropolis Gear Animations")
+mod.reg_hotfix(Mod.LEVEL, 'Sands_P',
+        '/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2.GearTurn',
+        'TheTimeline.PlayRate',
+        0.125*global_scale,
         )
 mod.newline()
 
