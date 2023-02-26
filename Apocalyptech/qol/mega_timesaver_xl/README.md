@@ -42,6 +42,7 @@ skips, or because it just felt right to leave 'em alone:
   the once anyway, since there's a fast travel at the top.
 * It's tempting to speed up Blue Hat Guy, but there's an eventual objective
   to catch him, which would be made more difficult if he's faster.
+* Butt Stallion's celebratory loot showers at the end, in Crest of Fate
 
 Known Bugs / TODO
 =================
@@ -67,6 +68,8 @@ Known Bugs / TODO
   Basically everything before Weepwild Dankness (and also before Mount Craw).
   I bumped the speed increase back up to 5x; WL containers seem a bit slower
   than BL3's.
+* Check `Climb_M_Plot8.Elevator_BoneElevator_2` gear animations, probably needs
+  the same tweak as the other two.
 
 Changelog
 =========

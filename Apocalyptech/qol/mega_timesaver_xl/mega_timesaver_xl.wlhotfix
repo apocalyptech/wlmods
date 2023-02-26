@@ -980,6 +980,10 @@ SparkEarlyLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_Dynamic.
 SparkEarlyLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2,ElevatorSpeed,0,,1000
 SparkEarlyLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2,ElevatorTravelTime,0,,1.6
 
+# The Fearamid
+SparkEarlyLevelPatchEntry,(1,1,0,Pyramid_P),/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2,ElevatorSpeed,0,,1000
+SparkEarlyLevelPatchEntry,(1,1,0,Pyramid_P),/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2,ElevatorTravelTime,0,,1.6
+
 ###
 ### Extra Elevator Tweaks
 ###
@@ -992,6 +996,12 @@ SparkLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sand
 
 # Ossu-Gol Necropolis Gear Animations
 SparkLevelPatchEntry,(1,1,0,Sands_P),/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2.GearTurn,TheTimeline.PlayRate,0,,0.625
+
+# Fearamid Elevator Delay
+SparkLevelPatchEntry,(1,1,0,Pyramid_P),/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2,SwitchDelayTime,0,,0
+
+# Fearamid Elevator Gear Animations
+SparkLevelPatchEntry,(1,1,0,Pyramid_P),/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2.GearTurn,TheTimeline.PlayRate,0,,0.625
 
 ###
 ### Lucky Dice tweak

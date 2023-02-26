@@ -889,9 +889,9 @@ for label, level, obj_name, speed, travel_time in sorted([
             '/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2',
             200, 8),
 
-        #("The Fearamid", 'Pyramid_P',
-        #    '/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2',
-        #    200, 8),
+        ("The Fearamid", 'Pyramid_P',
+            '/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2',
+            200, 8),
         ]):
     mod.comment(label)
     mod.reg_hotfix(Mod.EARLYLEVEL, level,
@@ -930,6 +930,23 @@ mod.newline()
 mod.comment("Ossu-Gol Necropolis Gear Animations")
 mod.reg_hotfix(Mod.LEVEL, 'Sands_P',
         '/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2.GearTurn',
+        'TheTimeline.PlayRate',
+        0.125*global_scale,
+        )
+mod.newline()
+
+mod.comment("Fearamid Elevator Delay")
+mod.reg_hotfix(Mod.LEVEL, 'Pyramid_P',
+        '/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2',
+        'SwitchDelayTime',
+        0,
+        )
+mod.newline()
+
+# Ditto above re: PlayRate
+mod.comment("Fearamid Elevator Gear Animations")
+mod.reg_hotfix(Mod.LEVEL, 'Pyramid_P',
+        '/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2.GearTurn',
         'TheTimeline.PlayRate',
         0.125*global_scale,
         )
