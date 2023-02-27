@@ -2,21 +2,24 @@ Mega TimeSaver XL
 =================
 
 This mod aims to speed up nearly all the noticeably-slow interactive
-objects that you use throughout WL.  It will eventually hope to encompass
-basically the entire game, but **it is currently a work in progress!**
+objects that you use throughout BL3.  It's focused mostly on things you
+directly interact with, though it does include other speedups like NPC
+walking speeds, where appropriate.  The mod doesn't attempt to do any
+dialogue or mission skips -- all content in the game should still be
+available.
 
-As such, this mod has not seen an awful lot of testing, so please let me
-know if there's anything game-breaking or Obviously Wrong with this (like
-if a too-fast animation ends up breaking mission progression somewhere).
-Ordinarily I wouldn't release this until I'd had a chance to thoroughly
-test it, but there's some fairly deep mining I need to do in the data to
-finish it properly
-
-Currently, the mod attempts to affect the following:
-
-* Lootable Containers, Doors, Elevators, Loot Dice, Wheel of Fate, Lost
-  Loot Machine, etc...
-
+* Lootable Containers, Doors, Elevators, Loot Dice, Wheel of Fate,
+  Lost Loot Machine, Barf Bunnies, etc...
+* Fast Travel / Teleport / Respawning
+* A lot of mission-and-map-specific animations throughout the game
+* Various character walking-speed increases:
+  * Curator (from The Ditcher)
+  * Flora and Glornesh (from A Farmer's Ardor)
+  * Jar
+  * Punchfather
+  * Ron Rivote
+  * Torgue
+  * Wastard
 
 Not Handled By This Mod
 =======================
@@ -47,8 +50,6 @@ skips, or because it just felt right to leave 'em alone:
 Known Bugs / TODO
 =================
 
-* Haven't yet really run through the game often enough to have a feel
-  for what might feel slow still.
 * Lost Loot machine opening/closing -- can't seem to get those to speed up.
 * The loot from some containers in the overworld (Crates, Pottery) get picked
   up immediately on spawn (so long as the player's in range) but the loot from
@@ -91,7 +92,7 @@ Changelog
    * Lucky Dice
    * Elevators
    * Ossu-Gol Necropolis bridge rollout
-   * End-of-Chaos Chamber chest
+   * End-of-Chaos-Chamber chest
    * Barf Bunnies
  * Mission/Level Specific Objects:
    * Starting platform-rise in Snoring Valley
