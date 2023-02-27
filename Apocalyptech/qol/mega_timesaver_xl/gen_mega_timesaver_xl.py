@@ -116,7 +116,7 @@ mod = Mod('mega_timesaver_xl.wlhotfix',
         ],
         contact='https://apocalyptech.com/contact.php',
         lic=Mod.CC_BY_SA_40,
-        v='0.9.0',
+        v='1.0.0',
         cats='qol',
         quiet_streaming=True,
         )

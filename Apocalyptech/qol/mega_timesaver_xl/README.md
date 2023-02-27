@@ -77,7 +77,7 @@ Known Bugs / TODO
 Changelog
 =========
 
-**v1.0.0** - *(unreleased)*
+**v1.0.0** - Feb 27, 2023
  * Merged in a lot of internal infrastructure from the now-"finished" BL3 version
  * Fixed pearl chests in Wargtooth Shallows, during Raiders of the Lost Shark
  * Fixed upright Zone 3 sarcophagus-like red chest loot-activation timing
