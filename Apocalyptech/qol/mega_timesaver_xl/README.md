@@ -48,6 +48,10 @@ skips, or because it just felt right to leave 'em alone:
 * It's tempting to speed up Blue Hat Guy, but there's an eventual objective
   to catch him, which would be made more difficult if he's faster.
 * Butt Stallion's celebratory loot showers at the end, in Crest of Fate
+* No DLC-chamber-specific speedups have been done, though a few could probably
+  use it.  My [Skip DLC Intros](https://github.com/BLCM/wlmods/wiki/Skip%20DLC%20Intros)
+  mod can be used to skip most of the DLC intro cinematics, if desired.  The
+  Wheel of Fate, at least, has been sped up.
 
 Known Bugs / TODO
 =================
