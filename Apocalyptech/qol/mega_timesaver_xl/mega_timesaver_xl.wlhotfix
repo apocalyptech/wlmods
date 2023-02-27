@@ -81,6 +81,8 @@ SparkEarlyLevelPatchEntry,(1,1,1,SeaBed_P),/Game/Maps/Zone_2/SeaBed/SeaBed_P.Sea
 ###
 
 # Containers
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),/Game/InteractiveObjects/_Dungeon/FinalChest/_Shared/Animation/AS_Open.AS_Open,RateScale,0,,5
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),/Game/InteractiveObjects/_Dungeon/FinalChest/_Shared/Animation/AS_Open.AS_Open,SequenceLength,0,,3.0
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/Lootables/FishingNet/Animation/AS_Open.AS_Open,RateScale,0,,5
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/Lootables/FishingNet/Animation/AS_Open.AS_Open,Notifies.Notifies[0].SegmentLength,0,,0.166667
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/Lootables/FishingNet/Animation/AS_Open.AS_Open,Notifies.Notifies[0].LinkValue,0,,0.044265
@@ -493,6 +495,10 @@ SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/A
 SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Animation/WheelOfFate/AS_WheelOfFate_Spinner_Open.AS_WheelOfFate_Spinner_Open,SequenceLength,0,,0.466667
 SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Animation/WheelOfFate/AS_WheelOfFate_Spinner_Close.AS_WheelOfFate_Spinner_Close,RateScale,0,,5
 SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Animation/WheelOfFate/AS_WheelOfFate_Spinner_Close.AS_WheelOfFate_Spinner_Close,SequenceLength,0,,1.1
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),/Game/InteractiveObjects/_Dungeon/SpecializedChest/_Shared/Animation/AS_Vomit.AS_Vomit,RateScale,0,,5
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),/Game/InteractiveObjects/_Dungeon/SpecializedChest/_Shared/Animation/AS_Vomit.AS_Vomit,SequenceLength,0,,2.0
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),/Game/InteractiveObjects/_Dungeon/SpecializedChest/_Shared/Animation/AS_Eat.AS_Eat,RateScale,0,,5
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),/Game/InteractiveObjects/_Dungeon/SpecializedChest/_Shared/Animation/AS_Eat.AS_Eat,SequenceLength,0,,1.333333
 
 ###
 ### InteractiveObject Speedups: Doors
@@ -1014,6 +1020,47 @@ SparkLevelPatchEntry,(1,7,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/Go
 ###
 
 SparkLevelPatchEntry,(1,7,0,Overworld_P),/Game/Lootables/_Design/Classes/Overworld/BPIO_Lootable_Overworld_Chest.BPIO_Lootable_Overworld_Chest_C,0,1,ExecuteUbergraph_BPIO_Lootable_Overworld_Chest,1,108,3:0.6,1:0
+
+###
+### Chaos Chamber final chest loot-spawn delay
+###
+
+SparkLevelAddedToWorldEntry,(1,7,0,D_LootRoom_Interactive),/Game/InteractiveObjects/_Dungeon/FinalChest/IO_ED_FinalChest.IO_ED_FinalChest_C,0,1,ExecuteUbergraph_IO_ED_FinalChest,1,897,3:2.8,4:0.56
+
+###
+### Chaos Chamber Barf Bunny
+###
+
+# Faster crystal feeding
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Amulet_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_AssaultRifle_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Heavy_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Melee_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Pauldron_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Pistol_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Ring_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Shotgun_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_SniperRifle_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Spell_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_SubmachineGun_2,NbOfCookiePerSecond,0,,1500
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Ward_2,NbOfCookiePerSecond,0,,1500
+
+# Faster loot shower
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Amulet_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_AssaultRifle_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Heavy_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Melee_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Pauldron_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Pistol_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Ring_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Shotgun_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_SniperRifle_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Spell_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_SubmachineGun_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+SparkLevelAddedToWorldEntry,(1,1,0,D_LootRoom_Interactive),D_LootRoom_Interactive:PersistentLevel.IO_TinaOffering_Ward_2.OakLootable,TimeToSpawnLootOver,0,,0.45
+
+# Shorter delay after feeding
+SparkLevelAddedToWorldEntry,(1,7,0,D_LootRoom_Interactive),/Game/InteractiveObjects/_Dungeon/SpecializedChest/_Shared/IO_TinaOffering.IO_TinaOffering_C,0,1,ExecuteUbergraph_IO_TinaOffering,1,7219,3:1.3,4:0.26
 
 ###
 ### Overworld rainbow bridge during Working Blueprint

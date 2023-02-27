@@ -91,6 +91,8 @@ Changelog
    * Lucky Dice
    * Elevators (including Kwartz platforms in Karnok's Wall)
    * Ossu-Gol Necropolis bridge rollout
+   * End-of-Chaos Chamber chest
+   * Barf Bunnies
  * Mission/Level Specific Objects:
    * Starting platform-rise in Snoring Valley
    * Intro gate in Snoring Valley
