@@ -71,10 +71,6 @@ Known Bugs / TODO
   loot shower.
 * The Tooth Fairy's mimic chest during Cash 4 Teeth, in Weepwild Dankness, goes
   absolutely crazy after you put the teeth in.
-* Maybe re-test up to Brighthoof restoration (and remainder of Queen's Gate)?
-  Basically everything before Weepwild Dankness (and also before Mount Craw).
-  I bumped the speed increase back up to 5x; WL containers seem a bit slower
-  than BL3's.
 * Maybe provide an alt version of this which *doesn't* speed up the barf bunny
   crystal intake, in case someone doesn't want that?
 
