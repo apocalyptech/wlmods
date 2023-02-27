@@ -1028,7 +1028,7 @@ SparkLevelPatchEntry,(1,7,0,Overworld_P),/Game/Lootables/_Design/Classes/Overwor
 SparkLevelAddedToWorldEntry,(1,7,0,D_LootRoom_Interactive),/Game/InteractiveObjects/_Dungeon/FinalChest/IO_ED_FinalChest.IO_ED_FinalChest_C,0,1,ExecuteUbergraph_IO_ED_FinalChest,1,897,3:2.8,4:0.56
 
 ###
-### Chaos Chamber Barf Bunny
+### Chaos Chamber Barf Bunnies
 ###
 
 # Faster crystal feeding

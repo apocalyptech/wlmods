@@ -599,7 +599,7 @@ for cat_name, cat_scale, cat_seqlen_scale, animseqs in [
             AS('/Game/PatchDLC/Indigo1/Common/Animation/WheelOfFate/AS_WheelOfFate_Mandibles_OpenClose_Short', target='Ind_CaravanHub_01_P'),
             AS('/Game/PatchDLC/Indigo1/Common/Animation/WheelOfFate/AS_WheelOfFate_Spinner_Open', target='Ind_CaravanHub_01_P'),
             AS('/Game/PatchDLC/Indigo1/Common/Animation/WheelOfFate/AS_WheelOfFate_Spinner_Close', target='Ind_CaravanHub_01_P'),
-            # Barf Bunny
+            # Barf Bunnies
             AS('/Game/InteractiveObjects/_Dungeon/SpecializedChest/_Shared/Animation/AS_Vomit',
                 method=Mod.ADDED,
                 target='D_LootRoom_Interactive',
@@ -1007,12 +1007,12 @@ mod.bytecode_hotfix(Mod.ADDED, 'D_LootRoom_Interactive',
         )
 mod.newline()
 
-# Chaos Chamber Barf Bunny
+# Chaos Chamber Barf Bunnies
 # Fun @ the object-name shortcuts here!  I had no idea that this would work.  It's
 # necessary in this case, too, 'cause the earlier path bits get incrementing
 # numbers for each time you reach the loot room, so otherwise we wouldn't be able
 # to touch these objects.
-mod.header('Chaos Chamber Barf Bunny')
+mod.header('Chaos Chamber Barf Bunnies')
 barf_names = [
         'Amulet',
         'AssaultRifle',
