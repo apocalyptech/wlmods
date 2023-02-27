@@ -68,8 +68,8 @@ Known Bugs / TODO
   Basically everything before Weepwild Dankness (and also before Mount Craw).
   I bumped the speed increase back up to 5x; WL containers seem a bit slower
   than BL3's.
-* Check `Climb_M_Plot8.Elevator_BoneElevator_2` gear animations, probably needs
-  the same tweak as the other two.
+* Maybe provide an alt version of this which *doesn't* speed up the barf bunny
+  crystal intake, in case someone doesn't want that?
 
 Changelog
 =========
@@ -89,7 +89,7 @@ Changelog
    * Lost Loot Machine
    * Wheel of Fate
    * Lucky Dice
-   * Elevators (including Kwartz platforms in Karnok's Wall)
+   * Elevators
    * Ossu-Gol Necropolis bridge rollout
    * End-of-Chaos Chamber chest
    * Barf Bunnies
@@ -105,6 +105,7 @@ Changelog
    * Mushroom growth during Little Boys Blue, in Weepwild Dankness
    * Inner Daemons secret stairs in Brighthoof
    * Elder Wyvern feeding time in Tangledrift, during Burning Hunger
+   * Kwartz Platforms in Karnok's Wall
  * Character Speedups:
    * Curator (from The Ditcher)
    * Flora and Glornesh (from A Farmer's Ardor)

@@ -849,6 +849,36 @@ for category, cat_scale, io_objs in [
 # `getall Elevator`
 mod.header('Elevators')
 for label, level, obj_name, speed, travel_time in sorted([
+
+        ###
+        ### First up: some actual elevators (not many of these!)
+        ###
+
+        ("Karnok's Wall - Small Elevator", 'Climb_P',
+            '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2',
+            200, 8),
+
+        # This doesn't actually work -- the actual speeds are set via ubergraph.  However, speeding it up ends
+        # up causing some dialogue skips, so whatever.  You only have to ride the thing once, anyway, and
+        # there's a fast travel right at the top.
+        #("Karnok's Wall - Skelevator", 'Climb_P',
+        #    '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_Plot8_Climb_Repaired',
+        #    200, 10),
+
+        ("Ossu-Gol Necropolis - Main Elevator", 'Sands_P',
+            '/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2',
+            200, 8),
+
+        ("The Fearamid", 'Pyramid_P',
+            '/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2',
+            200, 8),
+
+        ###
+        ### Next: Stuff that's technically elevators but doesn't look like it.
+        ###
+
+        # Quartz Platforms in Karnok's Wall
+
         ("Karnok's Wall - Kwartz Platform", 'Climb_P',
             '/Game/Maps/Zone_2/Climb/Climb_M_LavaGoodTime.Climb_M_LavaGoodTime:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_0',
             500.0, 10),
@@ -879,16 +909,6 @@ for label, level, obj_name, speed, travel_time in sorted([
         ("Karnok's Wall - Kwartz Platform", 'Climb_P',
             '/Game/Maps/Zone_2/Climb/Climb_P.Climb_P:PersistentLevel.BPIO_TheCursedClimb_DamageablePlatform_4',
             500.0, 10),
-        ("Karnok's Wall - Small Elevator", 'Climb_P',
-            '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2',
-            200, 8),
-
-        # This doesn't actually work -- the actual speeds are set via ubergraph.  However, speeding it up ends
-        # up causing some dialogue skips, so whatever.  You only have to ride the thing once, anyway, and
-        # there's a fast travel right at the top.
-        #("Karnok's Wall - Skelevator", 'Climb_P',
-        #    '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_Plot8_Climb_Repaired',
-        #    200, 10),
 
         # These are actually the drawbridge-type thing near the beginning of the level, which happens to
         # use the Elevator class to do its thing.  Fun!
@@ -899,13 +919,6 @@ for label, level, obj_name, speed, travel_time in sorted([
             '/Game/Maps/Zone_3/Sands/Sands_Dynamic.Sands_Dynamic:PersistentLevel.Elevator_SandsBridge_4',
             200, 8),
 
-        ("Ossu-Gol Necropolis - Main Elevator", 'Sands_P',
-            '/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2',
-            200, 8),
-
-        ("The Fearamid", 'Pyramid_P',
-            '/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2',
-            200, 8),
         ]):
     mod.comment(label)
     mod.reg_hotfix(Mod.EARLYLEVEL, level,
@@ -918,53 +931,23 @@ for label, level, obj_name, speed, travel_time in sorted([
             'ElevatorTravelTime',
             travel_time/global_scale,
             )
+
+    # Extra bone-gear speedups for BoneElevators.  Just doing a special-case substr
+    # check here.
+    if 'BoneElevator' in obj_name:
+        mod.reg_hotfix(Mod.LEVEL, level,
+                obj_name,
+                'SwitchDelayTime',
+                0,
+                )
+        # I could've sworn that PlayRate's never done anything useful in here, but it seems necessary to
+        # make the gears spin at a rate that looks decent and lasts the appropriate amount of time.  Weird.
+        mod.reg_hotfix(Mod.LEVEL, level,
+                f'{obj_name}.GearTurn',
+                'TheTimeline.PlayRate',
+                0.125*global_scale,
+                )
     mod.newline()
-
-# Extra Elevator Tweaks
-mod.header('Extra Elevator Tweaks')
-
-mod.comment("Karnok's Wall Small Elevator Delay")
-mod.reg_hotfix(Mod.LEVEL, 'Climb_P',
-        '/Game/Maps/Zone_2/Climb/Climb_M_Plot8.Climb_M_Plot8:PersistentLevel.Elevator_BoneElevator_2',
-        'SwitchDelayTime',
-        0,
-        )
-mod.newline()
-
-mod.comment("Ossu-Gol Necropolis Elevator Delay")
-mod.reg_hotfix(Mod.LEVEL, 'Sands_P',
-        '/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2',
-        'SwitchDelayTime',
-        0,
-        )
-mod.newline()
-
-# I could've sworn that PlayRate's never done anything useful in here, but it seems necessary to
-# make the gears spin at a rate that looks decent and lasts the appropriate amount of time.  Weird.
-mod.comment("Ossu-Gol Necropolis Gear Animations")
-mod.reg_hotfix(Mod.LEVEL, 'Sands_P',
-        '/Game/Maps/Zone_3/Sands/Sands_M_Plot09.Sands_M_Plot09:PersistentLevel.Elevator_BoneElevator_2.GearTurn',
-        'TheTimeline.PlayRate',
-        0.125*global_scale,
-        )
-mod.newline()
-
-mod.comment("Fearamid Elevator Delay")
-mod.reg_hotfix(Mod.LEVEL, 'Pyramid_P',
-        '/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2',
-        'SwitchDelayTime',
-        0,
-        )
-mod.newline()
-
-# Ditto above re: PlayRate
-mod.comment("Fearamid Elevator Gear Animations")
-mod.reg_hotfix(Mod.LEVEL, 'Pyramid_P',
-        '/Game/Maps/Zone_3/Pyramid/Pyramid_Dynamic.Pyramid_Dynamic:PersistentLevel.Elevator_BoneElevator_2.GearTurn',
-        'TheTimeline.PlayRate',
-        0.125*global_scale,
-        )
-mod.newline()
 
 # Lucky Dice
 # This is a factor that multiplies the TimelineDuration, to determine when to spawn the
@@ -985,8 +968,18 @@ mod.bytecode_hotfix(Mod.LEVEL, 'MatchAll',
         )
 mod.newline()
 
+# Lost Loot Machine -- See BL3's Mega TimeSaver XL for some other notes about
+# what I'd *ideally* like to do with this.  The same restrictions seem to apply.
+mod.header('Lost Loot Machine Gear-Spawning Delay')
+mod.reg_hotfix(Mod.LEVEL, 'MatchAll',
+        '/Game/InteractiveObjects/GameSystemMachines/LostLootMachine/_Design/BP_LostLootMachine.BP_LostLootMachine_C:OakLostLoot_GEN_VARIABLE',
+        'DelayBetweenSpawningItem',
+        0.75/global_scale,
+        )
+mod.newline()
+
 # Overworld chest loot-spawn delay
-mod.header('Overworld chest loot-spawn delay')
+mod.header('Mission/Level Specific: Overworld chest loot-spawn delay')
 mod.bytecode_hotfix(Mod.LEVEL, 'Overworld_P',
         '/Game/Lootables/_Design/Classes/Overworld/BPIO_Lootable_Overworld_Chest',
         'ExecuteUbergraph_BPIO_Lootable_Overworld_Chest',
@@ -997,7 +990,7 @@ mod.bytecode_hotfix(Mod.LEVEL, 'Overworld_P',
 mod.newline()
 
 # Chaos Chamber final chest loot-spawn delay
-mod.header('Chaos Chamber final chest loot-spawn delay')
+mod.header('Mission/Level Specific: Chaos Chamber final chest loot-spawn delay')
 mod.bytecode_hotfix(Mod.ADDED, 'D_LootRoom_Interactive',
         '/Game/InteractiveObjects/_Dungeon/FinalChest/IO_ED_FinalChest',
         'ExecuteUbergraph_IO_ED_FinalChest',
@@ -1012,7 +1005,7 @@ mod.newline()
 # necessary in this case, too, 'cause the earlier path bits get incrementing
 # numbers for each time you reach the loot room, so otherwise we wouldn't be able
 # to touch these objects.
-mod.header('Chaos Chamber Barf Bunnies')
+mod.header('Mission/Level Specific: Chaos Chamber Barf Bunnies')
 barf_names = [
         'Amulet',
         'AssaultRifle',
@@ -1058,23 +1051,13 @@ mod.bytecode_hotfix(Mod.ADDED, 'D_LootRoom_Interactive',
 mod.newline()
 
 # Overworld rainbow bridge
-mod.header('Overworld rainbow bridge during Working Blueprint')
+mod.header('Mission/Level Specific: Overworld rainbow bridge during Working Blueprint')
 mod.bytecode_hotfix(Mod.LEVEL, 'Overworld_P',
         '/Game/Maps/Overworld/Overworld_M_FumblingAround',
         'ExecuteUbergraph_Overworld_M_FumblingAround',
         2013,
         13.5,
         13.5/global_scale,
-        )
-mod.newline()
-
-# Lost Loot Machine -- See BL3's Mega TimeSaver XL for some other notes about
-# what I'd *ideally* like to do with this.  The same restrictions seem to apply.
-mod.header('Lost Loot Machine Gear-Spawning Delay')
-mod.reg_hotfix(Mod.LEVEL, 'MatchAll',
-        '/Game/InteractiveObjects/GameSystemMachines/LostLootMachine/_Design/BP_LostLootMachine.BP_LostLootMachine_C:OakLostLoot_GEN_VARIABLE',
-        'DelayBetweenSpawningItem',
-        0.75/global_scale,
         )
 mod.newline()
 
