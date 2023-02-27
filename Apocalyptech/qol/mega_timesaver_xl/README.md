@@ -8,6 +8,8 @@ walking speeds, where appropriate.  The mod doesn't attempt to do any
 dialogue or mission skips -- all content in the game should still be
 available.
 
+A sampling of the things this mod affects:
+
 * Lootable Containers, Doors, Elevators, Loot Dice, Wheel of Fate,
   Lost Loot Machine, Barf Bunnies, etc...
 * Fast Travel / Teleport / Respawning
