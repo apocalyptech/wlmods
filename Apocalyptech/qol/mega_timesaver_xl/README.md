@@ -2,7 +2,7 @@ Mega TimeSaver XL
 =================
 
 This mod aims to speed up nearly all the noticeably-slow interactive
-objects that you use throughout BL3.  It's focused mostly on things you
+objects that you use throughout WL.  It's focused mostly on things you
 directly interact with, though it does include other speedups like NPC
 walking speeds, where appropriate.  The mod doesn't attempt to do any
 dialogue or mission skips -- all content in the game should still be
