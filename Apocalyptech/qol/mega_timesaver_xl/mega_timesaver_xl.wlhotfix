@@ -908,10 +908,6 @@ SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/Switches/Lever/De
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/Switches/Lever/Design/IO_TimedSwitch_Industrial_FloorLever.IO_TimedSwitch_Industrial_FloorLever_C,Timelines.Timelines[2].Object..FloatTracks.FloatTracks[0].CurveFloat.Object..FloatCurve.Keys.Keys[2].Time,0,,0.04
 
 ###
-### InteractiveObject Speedups: Mission-Specific Machines
-###
-
-###
 ### InteractiveObject Speedups: Other Machines
 ###
 
@@ -1015,6 +1011,47 @@ SparkLevelPatchEntry,(1,7,0,MatchAll),/Game/InteractiveObjects/CrewChallenges/Go
 SparkLevelPatchEntry,(1,1,0,MatchAll),/Game/InteractiveObjects/GameSystemMachines/LostLootMachine/_Design/BP_LostLootMachine.BP_LostLootMachine_C:OakLostLoot_GEN_VARIABLE,DelayBetweenSpawningItem,0,,0.15
 
 ###
+### Mission/Level Specific: Wheel of Fate
+###
+
+# loot-spew rate increase
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Maps/CaravanHub_01/Ind_CaravanHub_01_Art.Ind_CaravanHub_01_Art:PersistentLevel.IO_WheelOfFate_2.OakLootable,TimeToSpawnLootOver,0,,0.5
+
+# Bytecode Delays
+SparkLevelPatchEntry,(1,7,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate.IO_WheelOfFate_C,0,1,ExecuteUbergraph_IO_WheelOfFate,1,699,3:0.5,3:0.1
+SparkLevelPatchEntry,(1,7,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate.IO_WheelOfFate_C,0,1,ExecuteUbergraph_IO_WheelOfFate,1,1061,3:0.9,4:0.18
+SparkLevelPatchEntry,(1,7,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate.IO_WheelOfFate_C,0,1,ExecuteUbergraph_IO_WheelOfFate,1,1210,3:1.4,19:0.27999999999999997
+SparkLevelPatchEntry,(1,7,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate.IO_WheelOfFate_C,0,1,ExecuteUbergraph_IO_WheelOfFate,2,5182,5718,1:2,3:0.4
+
+# Wheel Rotation Time
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Maps/CaravanHub_01/Ind_CaravanHub_01_Art.Ind_CaravanHub_01_Art:PersistentLevel.IO_WheelOfFate_2.WheelRotation,TheTimeline.Length,0,,1.0
+
+# ParticleSystems
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange.PS_Soul_Exchange,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDelay,0,,0.04
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange.PS_Soul_Exchange,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,0.084
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange.PS_Soul_Exchange,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDelay,0,,0.04
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange.PS_Soul_Exchange,Emitters.Emitters[3].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDelay,0,,0.06
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange_Screen.PS_Soul_Exchange_Screen,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Distribution.Object..Constant,0,,1.0
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange_Select.PS_Soul_Exchange_Select,Emitters.Emitters[3].Object..LODLevels.LODLevels[0].Object..TypeDataModule.Object..EmitterInfo.MaxLifetime,0,,0.066
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,1.4
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Distribution.Object..Constant,0,,1.6
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,1.4
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Distribution.Object..Constant,0,,1.6
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[2].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,1.4
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[2].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Distribution.Object..Constant,0,,1.6
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,0.05
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.MinValue,0,,0.2
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.MaxValue,0,,0.3
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Table.Values.Values[0],0,,0.2
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Table.Values.Values[1],0,,0.3
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,0.05
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDelay,0,,0.05
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.MinValue,0,,0.2
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.MaxValue,0,,0.3
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Table.Values.Values[0],0,,0.2
+SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Table.Values.Values[1],0,,0.3
+
+###
 ### Mission/Level Specific: Overworld chest loot-spawn delay
 ###
 
@@ -1066,47 +1103,6 @@ SparkLevelAddedToWorldEntry,(1,7,0,D_LootRoom_Interactive),/Game/InteractiveObje
 ###
 
 SparkLevelPatchEntry,(1,7,0,Overworld_P),/Game/Maps/Overworld/Overworld_M_FumblingAround.Overworld_M_FumblingAround_C,0,1,ExecuteUbergraph_Overworld_M_FumblingAround,1,2013,4:13.5,3:2.7
-
-###
-### Mission/Level Specific: Wheel of Fate
-###
-
-# loot-spew rate increase
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Maps/CaravanHub_01/Ind_CaravanHub_01_Art.Ind_CaravanHub_01_Art:PersistentLevel.IO_WheelOfFate_2.OakLootable,TimeToSpawnLootOver,0,,0.5
-
-# Bytecode Delays
-SparkLevelPatchEntry,(1,7,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate.IO_WheelOfFate_C,0,1,ExecuteUbergraph_IO_WheelOfFate,1,699,3:0.5,3:0.1
-SparkLevelPatchEntry,(1,7,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate.IO_WheelOfFate_C,0,1,ExecuteUbergraph_IO_WheelOfFate,1,1061,3:0.9,4:0.18
-SparkLevelPatchEntry,(1,7,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate.IO_WheelOfFate_C,0,1,ExecuteUbergraph_IO_WheelOfFate,1,1210,3:1.4,19:0.27999999999999997
-SparkLevelPatchEntry,(1,7,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate.IO_WheelOfFate_C,0,1,ExecuteUbergraph_IO_WheelOfFate,2,5182,5718,1:2,3:0.4
-
-# Wheel Rotation Time
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Maps/CaravanHub_01/Ind_CaravanHub_01_Art.Ind_CaravanHub_01_Art:PersistentLevel.IO_WheelOfFate_2.WheelRotation,TheTimeline.Length,0,,1.0
-
-# ParticleSystems
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange.PS_Soul_Exchange,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDelay,0,,0.04
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange.PS_Soul_Exchange,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,0.084
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange.PS_Soul_Exchange,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDelay,0,,0.04
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange.PS_Soul_Exchange,Emitters.Emitters[3].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDelay,0,,0.06
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange_Screen.PS_Soul_Exchange_Screen,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Distribution.Object..Constant,0,,1.0
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange_Select.PS_Soul_Exchange_Select,Emitters.Emitters[3].Object..LODLevels.LODLevels[0].Object..TypeDataModule.Object..EmitterInfo.MaxLifetime,0,,0.066
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,1.4
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Distribution.Object..Constant,0,,1.6
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,1.4
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Distribution.Object..Constant,0,,1.6
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[2].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,1.4
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye.PS_WheelOfFate_Eye,Emitters.Emitters[2].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Distribution.Object..Constant,0,,1.6
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,0.05
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.MinValue,0,,0.2
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.MaxValue,0,,0.3
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Table.Values.Values[0],0,,0.2
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[0].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Table.Values.Values[1],0,,0.3
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDuration,0,,0.05
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..RequiredModule.Object..EmitterDelay,0,,0.05
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.MinValue,0,,0.2
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.MaxValue,0,,0.3
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Table.Values.Values[0],0,,0.2
-SparkLevelPatchEntry,(1,1,0,Ind_CaravanHub_01_P),/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke.PS_WheelOfFate_Smoke,Emitters.Emitters[1].Object..LODLevels.LODLevels[0].Object..Modules.Modules[0].Object..Lifetime.Table.Values.Values[1],0,,0.3
 
 ###
 ### Mission/Level Specific: Starting gun platform-rise speed, in Snoring Valley

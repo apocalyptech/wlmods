@@ -42,11 +42,10 @@ verbose = args.verbose
 #  - ParticleSystems
 #    There's a few cases where a ParticleSystem might determine the timing of
 #    something, and others where it just ends up looking weird if you don't
-#    speed it up.  Digistruct effects tend to use these, and stuff like the
-#    steam while Barista Bot pours coffee in Metridian Metroplex, or the liquid
-#    pouring in the brewery in Cankerwood.  There's a lot of values which need
-#    to be tweaked to speed up a ParticleSystem -- I've got that wrapped up in
-#    a `scale_ps()` function.
+#    speed it up.  For Wonderlands, it looks like the only place we tweak these,
+#    in the end, is some Wheel of Fate ParticleSystems.  There's a lot of values
+#    which need to be tweaked to speed up a ParticleSystem -- I've got that
+#    wrapped up in a `scale_ps()` function.
 #
 #  - AnimSequences
 #    These are little individual bits of animations, and if that's all you've
@@ -56,10 +55,8 @@ verbose = args.verbose
 #    `SequenceLength` inside the AnimSequence which I've never figured out.  Some
 #    AnimSequences end up glitching out if you scale SequenceLength along with
 #    everything else, but others require you to scale it if you want the overall
-#    timings to update properly.  Go figure.  The vehicle-related animations in
-#    particular are very finnicky, and I've had to balance between an animation
-#    which seems to freeze up versus having it *look* fine but leave the vehicle
-#    uncontrollable for a bit afterwards.  Note that the AS class expects you to
+#    timings to update properly.  Go figure.  In BL3, the vehicle-related animations
+#    in particular are very finnicky.  Note that the AS class expects you to fill
 #    fill in `scale` and `seqlen_scale` *after* instantiation, due to how we're
 #    processing these.
 #
@@ -78,15 +75,14 @@ verbose = args.verbose
 #  - GbxLevelSequenceActors
 #    As a potential alternative to both AnimSequence and InteractiveObject tweaking,
 #    the game sometimes uses sequences to kick off one or more of those, and there
-#    may be a GbxLevelSequenceActor which kicks that off.  I didn't really discover
-#    these until pretty late in the mod development, but when they're available,
+#    may be a GbxLevelSequenceActor which kicks that off.  When they're available,
 #    they seem much more reliable (and simpler!) than editing AnimSequence and
 #    InteractiveObject objects directly.  They've got a `SequencePlayer` sub-object
 #    attached which has a very convenient `PlayRate` attr, so all I need to do is
 #    set that and I'm golden.  I suspect there are quite a few AS/IO tweaks
-#    that I'm doing which would be better done via this method.  (I'm pretty sure
-#    there are plenty of AS/IO objects which don't live inside a sequence, so we'd
-#    have to be doing some direct tweaks anyway, though.)
+#    that I'm doing which would be better done via this method.  (There are plenty
+#    of AS/IO objects which don't live inside a sequence, so we'd have to be doing
+#    some direct tweaks anyway, though.)
 #
 #  - Bytecode Tweaks
 #    Finally, the other main class of tweaks in here is altering blueprint bytecode,
@@ -132,15 +128,16 @@ mod = Mod('mega_timesaver_xl.wlhotfix',
 ### others.  Some "complex" animations and sequences might be somewhat touchy about
 ### the precise timing, and I've done some manual tweaking to line things up in a few
 ### cases.  Nudging these global vars up or down could knock some of that out of
-### alignment.  Vehicle animations in particular are already a bit weird and don't
-### even work perfectly at 2x.  Dialogue skips probably become more likely as the
-### scales goes up, too, particularly on the character movement scale.
+### alignment.  Dialogue skips probably become more likely as the scales goes up, too,
+### particularly on the character movement scale.
 ###
 
-# How much to improve speed
+# How much to improve speed (making this a bit faster than the BL3 version -- WL
+# animations seem a bit slower overall than BL3's)
 global_scale = 5
 
-# ... but I want to do doors a *bit* more
+# Keeping the global/door split that we had in BL3, even though they're currently set
+# to the same value.
 door_scale = 5
 
 # Character movement speed
@@ -732,8 +729,6 @@ for category, cat_scale, io_objs in [
             IO('/Game/InteractiveObjects/Switches/Lever/Design/IO_TimedSwitch_Industrial_FloorLever_Damageable'),
             IO('/Game/InteractiveObjects/Switches/Lever/Design/IO_TimedSwitch_Industrial_FloorLever'),
             ]),
-        ('Mission-Specific Machines', global_scale, [
-            ]),
         ('Other Machines', global_scale, [
             # See also: a bytecode tweak below
             IO('/Game/InteractiveObjects/CrewChallenges/GoldenDice/_Design/IO_Challenge_GoldenDice',
@@ -984,6 +979,68 @@ mod.reg_hotfix(Mod.LEVEL, 'MatchAll',
         )
 mod.newline()
 
+# Wheel of Fate
+mod.header('Mission/Level Specific: Wheel of Fate')
+
+# This modification in specific is a bit silly, but I figured I should
+# guard against having the loot spew get cut off, in case there's timing
+# isuses.
+mod.comment('loot-spew rate increase')
+mod.reg_hotfix(Mod.LEVEL, 'Ind_CaravanHub_01_P',
+        '/Game/PatchDLC/Indigo1/Common/Maps/CaravanHub_01/Ind_CaravanHub_01_Art.Ind_CaravanHub_01_Art:PersistentLevel.IO_WheelOfFate_2.OakLootable',
+        'TimeToSpawnLootOver',
+        # default: 1
+        0.5,
+        )
+mod.newline()
+
+# Honestly I have no idea what any of these actually do, since I honestly
+# can't tell any difference when any of them are set.  I guess I'll keep
+# 'em in, though.
+mod.comment('Bytecode Delays')
+for index, default in [
+        (699, 0.5),
+        (1061, 0.9),
+        (1210, 1.4),
+        ([5182, 5718], 2),
+        # This one, amusingly, controls the blink frequency.  Does a
+        # random interval from 0 to this number.
+        #(9413, 5),
+        ]:
+    mod.bytecode_hotfix(Mod.LEVEL, 'Ind_CaravanHub_01_P',
+            '/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate',
+            'ExecuteUbergraph_IO_WheelOfFate',
+            index,
+            default,
+            default/global_scale,
+            )
+mod.newline()
+
+# This is the main speedup, really, apart from the IO() tweak
+mod.comment('Wheel Rotation Time')
+mod.reg_hotfix(Mod.LEVEL, 'Ind_CaravanHub_01_P',
+        '/Game/PatchDLC/Indigo1/Common/Maps/CaravanHub_01/Ind_CaravanHub_01_Art.Ind_CaravanHub_01_Art:PersistentLevel.IO_WheelOfFate_2.WheelRotation',
+        'TheTimeline.Length',
+        5/global_scale,
+        )
+mod.newline()
+
+# Like with the Wheel of Fate AnimSequence tweaks, I suspect that a number
+# of these aren't actually needed.
+mod.comment('ParticleSystems')
+for ps_name in [
+        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange',
+        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange_Screen',
+        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange_Select',
+        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye',
+        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke',
+        ]:
+    scale_ps(mod, data, Mod.LEVEL, 'Ind_CaravanHub_01_P',
+            ps_name,
+            global_scale,
+            )
+mod.newline()
+
 # Overworld chest loot-spawn delay
 mod.header('Mission/Level Specific: Overworld chest loot-spawn delay')
 mod.bytecode_hotfix(Mod.LEVEL, 'Overworld_P',
@@ -1065,68 +1122,6 @@ mod.bytecode_hotfix(Mod.LEVEL, 'Overworld_P',
         13.5,
         13.5/global_scale,
         )
-mod.newline()
-
-# Wheel of Fate
-mod.header('Mission/Level Specific: Wheel of Fate')
-
-# This modification in specific is a bit silly, but I figured I should
-# guard against having the loot spew get cut off, in case there's timing
-# isuses.
-mod.comment('loot-spew rate increase')
-mod.reg_hotfix(Mod.LEVEL, 'Ind_CaravanHub_01_P',
-        '/Game/PatchDLC/Indigo1/Common/Maps/CaravanHub_01/Ind_CaravanHub_01_Art.Ind_CaravanHub_01_Art:PersistentLevel.IO_WheelOfFate_2.OakLootable',
-        'TimeToSpawnLootOver',
-        # default: 1
-        0.5,
-        )
-mod.newline()
-
-# Honestly I have no idea what any of these actually do, since I honestly
-# can't tell any difference when any of them are set.  I guess I'll keep
-# 'em in, though.
-mod.comment('Bytecode Delays')
-for index, default in [
-        (699, 0.5),
-        (1061, 0.9),
-        (1210, 1.4),
-        ([5182, 5718], 2),
-        # This one, amusingly, controls the blink frequency.  Does a
-        # random interval from 0 to this number.
-        #(9413, 5),
-        ]:
-    mod.bytecode_hotfix(Mod.LEVEL, 'Ind_CaravanHub_01_P',
-            '/Game/PatchDLC/Indigo1/Common/InteractiveObjects/WheelOfFate/IO_WheelOfFate',
-            'ExecuteUbergraph_IO_WheelOfFate',
-            index,
-            default,
-            default/global_scale,
-            )
-mod.newline()
-
-# This is the main speedup, really, apart from the IO() tweak
-mod.comment('Wheel Rotation Time')
-mod.reg_hotfix(Mod.LEVEL, 'Ind_CaravanHub_01_P',
-        '/Game/PatchDLC/Indigo1/Common/Maps/CaravanHub_01/Ind_CaravanHub_01_Art.Ind_CaravanHub_01_Art:PersistentLevel.IO_WheelOfFate_2.WheelRotation',
-        'TheTimeline.Length',
-        5/global_scale,
-        )
-mod.newline()
-
-# Like with the Wheel of Fate AnimSequence tweaks, I suspect that a number
-# of these aren't actually needed.
-mod.comment('ParticleSystems')
-for ps_name in [
-        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange',
-        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange_Screen',
-        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_Soul_Exchange_Select',
-        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Eye',
-        '/Game/PatchDLC/Indigo1/Common/Effects/Systems/PS_WheelOfFate_Smoke',
-        ]:
-    scale_ps(mod, data, Mod.LEVEL, 'Ind_CaravanHub_01_P',
-            ps_name,
-            global_scale,
-            )
 mod.newline()
 
 # Slapping in the getall here 'cause I always have to reconstruct the buggers every time:
@@ -1364,6 +1359,9 @@ for char in sorted([
         raise RuntimeError('Could not find {} in {}'.format(char.default_name, char.path))
 
     mod.comment(char.name)
+    # As I'd observed towards the end of BL3's Mega TimeSaver XL, it doesn't look like
+    # MaxSprintSpeed's actually used.  The Stances that control NPC speeds just scale
+    # the MaxWalkSpeed.  So, no need to do another line for sprinting!
     mod.reg_hotfix(Mod.CHAR, char.last_bit,
             char.full_path,
             'OakCharacterMovement.Object..MaxWalkSpeed',
@@ -1372,19 +1370,6 @@ for char in sorted([
                 round(speed_walk*char.scale, 6),
                 ),
             )
-    # NOTE: After spending quite a bit of time getting Oletta sorted out, I'm pretty sure
-    # that MaxSprintSpeed isn't actually used by NPCs.  I'm pretty sure that the stances
-    # used to control NPC speeds just take the walk speed and scale it where appropriate.
-    # I think that MaxWalkSpeed itself might even be scaled down a bit for the usual NPC
-    # "Walk" stance.
-    #mod.reg_hotfix(Mod.CHAR, char.last_bit,
-    #        char.full_path,
-    #        'OakCharacterMovement.Object..MaxSprintSpeed',
-    #        '(Value={},BaseValue={})'.format(
-    #            round(speed_sprint*char.sprint_scale, 6),
-    #            round(speed_sprint*char.sprint_scale, 6),
-    #            ),
-    #        )
     if have_slowdown:
         mod.reg_hotfix(Mod.CHAR, char.last_bit,
                 char.full_path,
